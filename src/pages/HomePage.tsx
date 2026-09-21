@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Award, Building2, ShieldCheck, Trophy } from 'lucide-react';
 import {
   BRAND_INFO,
   SERVICES_DATA,
@@ -207,30 +207,47 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ================= ABOUT US SECTION (WHITE BACKGROUND) ================= */}
-      <section id="about-us" className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Column: Heading */}
-            <div className="lg:col-span-6 space-y-4">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1468a2] flex items-center space-x-2">
-                <span className="w-6 h-[1px] bg-[#1468a2]" />
-                <span>ABOUT US</span>
-              </span>
-              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl text-[#181818] font-normal leading-[1.12]">
-                Designing Spaces <br />
-                <span className="italic font-serif text-[#1468a2]">With Character.</span>
-              </h2>
+      <section id="about-us" className="py-20 md:py-28 bg-white border-b border-[#E2DACD]/60">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12 md:space-y-16">
+          {/* Section Header */}
+          <div className="space-y-4 max-w-full">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1468a2] flex items-center space-x-2">
+              <span className="w-6 h-[1px] bg-[#1468a2]" />
+              <span>ABOUT US</span>
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[50px] xl:text-6xl text-[#181818] font-normal leading-[1.12] sm:whitespace-nowrap">
+              Designing Spaces <span className="italic font-serif text-[#1468a2]">With Character.</span>
+            </h2>
+          </div>
+
+          {/* Side-by-Side Content Grid: Left Image & Right Text */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left Column: Showcase Image */}
+            <div className="lg:col-span-6">
+              <div className="rounded-3xl overflow-hidden h-[340px] sm:h-[420px] w-full border border-[#E2DACD] shadow-lg relative group">
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                  alt="Jain Signature Architectural Interior"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                <div className="absolute bottom-5 left-6 right-6 text-white flex justify-between items-center text-xs font-medium">
+                  <span className="tracking-wider uppercase font-sans">Bespoke Architectural Spaces</span>
+                  <span className="text-[#FAF8F5]/80 font-serif italic">Jain Signature Studio</span>
+                </div>
+              </div>
             </div>
 
-            {/* Right Column: Story & Narrative */}
-            <div className="lg:col-span-6 space-y-6 lg:pl-8">
+            {/* Right Column: Story & Narrative Aligned with Image */}
+            <div className="lg:col-span-6 space-y-6 flex flex-col justify-center">
               <p className="text-lg md:text-xl text-[#181818] font-normal leading-relaxed">
                 Jain Signature is an acclaimed luxury interior design & architecture studio based in Ghaziabad, UP. Founded over a decade ago, we specialize in high-end residential estates, luxury penthouses, modular fitouts, and commercial environments across India.
               </p>
               <p className="text-base md:text-lg text-[#181818] font-normal leading-relaxed">
                 Our practice harmonizes emotional serenity, material authenticity, and architectural precision. From civil masterplanning to white-glove styling, we compose spaces that remain timeless across generations.
               </p>
-              <div>
+              <div className="pt-2">
                 <button
                   onClick={() => setActivePage('about')}
                   className="inline-flex items-center space-x-2 text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-[#181818] hover:text-[#1468a2] transition-colors border-b-2 border-[#181818] hover:border-[#1468a2] pb-1.5"
@@ -242,18 +259,52 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          {/* Key Statistics Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-10 md:p-14 rounded-3xl bg-[#FAF8F5] border border-[#E2DACD] shadow-sm">
-            {BRAND_INFO.stats.map((stat, idx) => (
-              <div key={idx} className="space-y-2 text-center md:text-left">
-                <span className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#181818] block">
-                  {stat.value}
-                </span>
-                <span className="text-xs md:text-sm uppercase font-semibold tracking-wider text-[#181818] block">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          {/* Key Statistics Grid - Ultra Modern Luxury Obsidian Card */}
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-[#141414] border border-[#2B2B2B] shadow-2xl p-8 sm:p-12 md:p-14 text-white group">
+            {/* Ambient Lighting Accents */}
+            <div className="absolute -top-32 -left-32 w-80 h-80 bg-[#1468a2]/20 rounded-full blur-[90px] pointer-events-none transition-all duration-700 group-hover:bg-[#1468a2]/30" />
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-[#1468a2]/15 rounded-full blur-[90px] pointer-events-none" />
+
+            {/* Subtle Metallic Grid Pattern Overlay */}
+            <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+
+            <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#282828]">
+              {BRAND_INFO.stats.map((stat, idx) => {
+                const statIcons = [
+                  <Award className="w-5 h-5 text-[#1468a2]" key="1" />,
+                  <Building2 className="w-5 h-5 text-[#1468a2]" key="2" />,
+                  <ShieldCheck className="w-5 h-5 text-[#1468a2]" key="3" />,
+                  <Trophy className="w-5 h-5 text-[#1468a2]" key="4" />
+                ];
+
+                return (
+                  <div
+                    key={idx}
+                    className={`space-y-4 pt-6 md:pt-0 ${
+                      idx !== 0 ? 'md:pl-8 lg:pl-10' : ''
+                    } ${idx !== BRAND_INFO.stats.length - 1 ? 'md:pr-8 lg:pr-10' : ''} group/stat`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="w-11 h-11 rounded-2xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-[#1468a2] group-hover/stat:bg-[#1468a2] group-hover/stat:text-white group-hover/stat:border-[#1468a2] transition-all duration-300 shadow-inner">
+                        {statIcons[idx]}
+                      </div>
+                      <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/40">
+                        0{idx + 1}
+                      </span>
+                    </div>
+
+                    <div className="space-y-1">
+                      <span className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-white group-hover/stat:text-[#1468a2] transition-colors duration-300 block tracking-tight">
+                        {stat.value}
+                      </span>
+                      <span className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-white/70 block leading-snug">
+                        {stat.label}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>

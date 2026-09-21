@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ShieldCheck, Feather } from 'lucide-react';
+import { Compass, ShieldCheck, Feather, Award, Building2, Trophy } from 'lucide-react';
 import { BRAND_INFO, TEAM_MEMBERS } from '../data/studioData';
 import { SectionHeading } from '../components/SectionHeading';
 
@@ -12,13 +12,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
     <div className="pt-28 pb-20 space-y-24 bg-white">
       {/* About Hero */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-8">
-        <div className="space-y-6 max-w-4xl">
+        <div className="space-y-6 max-w-full">
           <span className="text-xs uppercase font-semibold tracking-[0.3em] text-[#1468a2] block">
             ABOUT JAIN SIGNATURE
           </span>
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl text-[#181818] font-normal leading-[1.08]">
-            Designing Spaces <br />
-            <span className="italic font-serif text-[#1468a2]">With Character.</span>
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#181818] font-normal leading-[1.08] sm:whitespace-nowrap">
+            Designing Spaces <span className="italic font-serif text-[#1468a2]">With Character.</span>
           </h1>
           <p className="text-lg sm:text-xl text-[#181818] font-normal leading-relaxed max-w-2xl">
             Founded on the conviction that interior architecture must harmonize emotional serenity, material authenticity, and architectural precision.
@@ -44,19 +43,53 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
         </div>
       </section>
 
-      {/* Key Statistics Grid */}
+      {/* Key Statistics Grid - Ultra Modern Luxury Obsidian Card */}
       <section className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 p-10 md:p-14 rounded-3xl bg-[#FAF8F5] border border-[#E2DACD] shadow-sm">
-          {BRAND_INFO.stats.map((stat, idx) => (
-            <div key={idx} className="space-y-2 text-center md:text-left">
-              <span className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-[#181818] block">
-                {stat.value}
-              </span>
-              <span className="text-xs md:text-sm uppercase font-semibold tracking-wider text-[#181818] block">
-                {stat.label}
-              </span>
-            </div>
-          ))}
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-[#141414] border border-[#2B2B2B] shadow-2xl p-8 sm:p-12 md:p-14 text-white group">
+          {/* Ambient Lighting Accents */}
+          <div className="absolute -top-32 -left-32 w-80 h-80 bg-[#1468a2]/20 rounded-full blur-[90px] pointer-events-none transition-all duration-700 group-hover:bg-[#1468a2]/30" />
+          <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-[#1468a2]/15 rounded-full blur-[90px] pointer-events-none" />
+
+          {/* Subtle Metallic Grid Pattern Overlay */}
+          <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#282828]">
+            {BRAND_INFO.stats.map((stat, idx) => {
+              const statIcons = [
+                <Award className="w-5 h-5 text-[#1468a2]" key="1" />,
+                <Building2 className="w-5 h-5 text-[#1468a2]" key="2" />,
+                <ShieldCheck className="w-5 h-5 text-[#1468a2]" key="3" />,
+                <Trophy className="w-5 h-5 text-[#1468a2]" key="4" />
+              ];
+
+              return (
+                <div
+                  key={idx}
+                  className={`space-y-4 pt-6 md:pt-0 ${
+                    idx !== 0 ? 'md:pl-8 lg:pl-10' : ''
+                  } ${idx !== BRAND_INFO.stats.length - 1 ? 'md:pr-8 lg:pr-10' : ''} group/stat`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="w-11 h-11 rounded-2xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center text-[#1468a2] group-hover/stat:bg-[#1468a2] group-hover/stat:text-white group-hover/stat:border-[#1468a2] transition-all duration-300 shadow-inner">
+                      {statIcons[idx]}
+                    </div>
+                    <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-white/40">
+                      0{idx + 1}
+                    </span>
+                  </div>
+
+                  <div className="space-y-1">
+                    <span className="font-serif text-4xl sm:text-5xl md:text-6xl font-normal text-white group-hover/stat:text-[#1468a2] transition-colors duration-300 block tracking-tight">
+                      {stat.value}
+                    </span>
+                    <span className="text-xs sm:text-sm uppercase font-semibold tracking-wider text-white/70 block leading-snug">
+                      {stat.label}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
