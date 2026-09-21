@@ -93,22 +93,22 @@ export const JournalPage: React.FC<JournalPageProps> = ({ onSelectArticle }) => 
                 <span className="text-xs uppercase font-semibold tracking-widest text-[#1468a2] block">
                   {featuredArticle.category}
                 </span>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#181818] font-normal leading-snug group-hover:text-[#1468a2] transition-colors">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#181818] font-medium leading-snug group-hover:text-[#1468a2] transition-colors">
                   {featuredArticle.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-[#181818]/70 font-light leading-relaxed">
+                <p className="text-sm sm:text-base text-[#181818]/80 font-normal leading-relaxed">
                   {featuredArticle.excerpt}
                 </p>
               </div>
 
               <div className="space-y-4 pt-6 border-t border-[#E2DACD]">
-                <div className="flex items-center space-x-4 text-xs text-[#181818]/60">
-                  <span className="flex items-center space-x-1">
+                <div className="flex items-center space-x-4 text-xs font-sans font-medium text-[#181818]/80">
+                  <span className="flex items-center space-x-1.5">
                     <Calendar className="w-3.5 h-3.5 text-[#1468a2]" />
                     <span>{featuredArticle.date}</span>
                   </span>
-                  <span>•</span>
-                  <span className="flex items-center space-x-1">
+                  <span className="text-[#181818]/30">•</span>
+                  <span className="flex items-center space-x-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#1468a2]" />
                     <span>{featuredArticle.readTime}</span>
                   </span>
@@ -146,13 +146,17 @@ export const JournalPage: React.FC<JournalPageProps> = ({ onSelectArticle }) => 
                 </div>
 
                 <div className="p-6 md:p-8 space-y-3">
-                  <div className="text-[11px] text-[#1468a2] font-mono">
-                    {article.date} • {article.readTime}
+                  <div className="flex items-center space-x-2 text-[11px] text-[#1468a2] font-sans font-semibold tracking-wider uppercase">
+                    <Calendar className="w-3.5 h-3.5 text-[#1468a2]" />
+                    <span>{article.date}</span>
+                    <span className="text-[#181818]/30">•</span>
+                    <Clock className="w-3.5 h-3.5 text-[#1468a2]" />
+                    <span>{article.readTime}</span>
                   </div>
-                  <h3 className="font-serif text-xl md:text-2xl text-[#181818] group-hover:text-[#1468a2] transition-colors leading-snug">
+                  <h3 className="font-serif text-xl md:text-2xl text-[#181818] font-semibold group-hover:text-[#1468a2] transition-colors leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-xs text-[#181818]/70 line-clamp-2 font-light leading-relaxed">
+                  <p className="text-sm text-[#181818]/80 line-clamp-3 font-normal leading-relaxed">
                     {article.excerpt}
                   </p>
                 </div>

@@ -559,10 +559,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                   </div>
 
                   <div className="p-8 space-y-3">
-                    <div className="text-xs text-[#1468a2] font-mono font-semibold">
+                    <div className="text-xs text-[#1468a2] font-sans font-semibold tracking-wider uppercase">
                       {article.date} • {article.readTime}
                     </div>
-                    <h3 className="font-serif text-xl md:text-2xl text-[#181818] group-hover:text-[#1468a2] transition-colors leading-snug font-normal">
+                    <h3 className="font-serif text-xl md:text-2xl text-[#181818] group-hover:text-[#1468a2] transition-colors leading-snug font-medium">
                       {article.title}
                     </h3>
                     <p className="text-base text-[#181818] line-clamp-3 font-normal leading-relaxed">
