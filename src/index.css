@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: #1468a2;
+    color: #FFFFFF;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F2EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1468a2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1468a2;
+}
+
+/* Glass & Blur effects for sticky header */
+.header-glass {
+  background-color: rgba(245, 242, 236, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.dark-header-glass {
+  background-color: rgba(24, 24, 24, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom subtle grain background for luxury feel */
+.bg-grain {
+  background-image: radial-gradient(rgba(181, 154, 112, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
