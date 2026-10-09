@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Award, Building2, ShieldCheck, Trophy } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, ChevronDown, ChevronLeft, ChevronRight, Award, Building2, ShieldCheck, Trophy, Download, CheckCircle2 } from 'lucide-react';
 import {
   BRAND_INFO,
   SERVICES_DATA,
   PROJECTS_DATA,
   PROCESS_STEPS,
   CORE_PRINCIPLES,
-  TESTIMONIALS,
   ARTICLES_DATA,
-  GALLERY_IMAGES
+  SERVICE_LOCATIONS,
+  CLIENT_SOLUTIONS
 } from '../data/studioData';
 import type { Service, Project, Article } from '../data/studioData';
 import { SectionHeading } from '../components/SectionHeading';
 import { ServiceCard } from '../components/ServiceCard';
 import { ProjectCard } from '../components/ProjectCard';
+import { GoogleReviewsSlider } from '../components/GoogleReviewsSlider';
+import { VideoReelsSection } from '../components/VideoReelsSection';
 
 interface HomePageProps {
   setActivePage: (page: string) => void;
   onSelectService: (service: Service) => void;
   onSelectProject: (project: Project) => void;
   onSelectArticle: (article: Article) => void;
-  onOpenInquiry: () => void;
+  onOpenInquiry: (serviceTitle?: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -74,6 +76,15 @@ export const HomePage: React.FC<HomePageProps> = ({
     setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
   };
 
+  const handleDownloadPortfolio = () => {
+    const link = document.createElement('a');
+    link.href = '/Jain_Signature_Studio_Portfolio.pdf';
+    link.download = 'Jain_Signature_Studio_Portfolio.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const filteredServices = activeServiceCategory === 'All'
     ? SERVICES_DATA
     : SERVICES_DATA.filter(s => s.category === activeServiceCategory);
@@ -87,8 +98,8 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div className="space-y-0 bg-white">
-      {/* ================= HERO SECTION WITH RIGHT-SIDE WHITE CARD ================= */}
-      <section className="relative w-full bg-[#FAF8F5] lg:bg-[#181818] lg:h-screen lg:min-h-[650px] lg:flex lg:items-center overflow-hidden pt-16 lg:pt-0">
+      {/* ================= HERO SECTION WITH RIGHT-SIDE TRANSPARENT CARD ================= */}
+      <section className="relative w-full bg-[#FAF8F5] lg:bg-[#181818] lg:min-h-screen lg:flex lg:items-center overflow-hidden pt-28 sm:pt-32 lg:pt-[125px] pb-12 lg:pb-16">
         {/* Hero Image Area (Mobile: Top Banner, Desktop: Fullscreen Background) */}
         <div className="relative h-[320px] sm:h-[420px] lg:absolute lg:inset-0 lg:h-full w-full overflow-hidden bg-[#181818]">
           {heroImages.map((slide, idx) => (
@@ -109,13 +120,13 @@ export const HomePage: React.FC<HomePageProps> = ({
           ))}
         </div>
 
-        {/* Hero Content: Right-Aligned Narrow White Card (Below Image on Mobile, Side-card on Desktop) */}
+        {/* Hero Content: Right-Aligned Narrow Solid White Card */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-center lg:justify-end mt-4 sm:mt-6 lg:mt-0 py-4 lg:py-0">
-          <div className="w-full max-w-[380px] sm:max-w-[400px] md:max-w-[415px] mr-0 lg:mr-4 xl:mr-8 bg-white/95 backdrop-blur-sm p-7 sm:p-9 md:p-10 rounded-3xl border border-[#E2DACD] shadow-2xl space-y-6 text-left transform transition-all duration-500 min-h-[460px] sm:min-h-[500px] md:min-h-[540px] flex flex-col justify-between">
+          <div className="w-full max-w-[380px] sm:max-w-[400px] md:max-w-[425px] mr-0 lg:mr-4 xl:mr-8 bg-white p-7 sm:p-9 md:p-10 rounded-3xl border border-[#E2DACD] shadow-2xl space-y-6 text-left transform transition-all duration-500 min-h-[460px] sm:min-h-[500px] md:min-h-[520px] flex flex-col justify-between">
             {/* Top Container */}
             <div className="space-y-5">
               {/* Top Label */}
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-[#FAF8F5] border border-[#E2DACD]">
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#E2DACD]">
                 <span className="w-2 h-2 rounded-full bg-[#1468a2] animate-ping" />
                 <span className="text-[9px] md:text-[10px] uppercase tracking-[0.2em] font-semibold text-[#1468a2]">
                   LUXURY INTERIORS • ARCHITECTURE
@@ -134,22 +145,35 @@ export const HomePage: React.FC<HomePageProps> = ({
               </div>
 
               {/* Hero CTAs */}
-              <div className="pt-3 flex flex-col sm:flex-row items-center gap-3">
+              <div className="pt-2 flex flex-col space-y-2.5">
                 <button
-                  onClick={onOpenInquiry}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#181818] text-white font-semibold text-xs uppercase tracking-[0.18em] hover:bg-[#1468a2] transition-colors flex items-center justify-center space-x-2 shadow-md"
+                  onClick={() => onOpenInquiry('Get a Project Estimate')}
+                  className="w-full px-5 py-3 rounded-full bg-[#181818] text-white font-semibold text-xs uppercase tracking-[0.16em] hover:bg-[#1468a2] transition-colors flex items-center justify-center space-x-2 shadow-md group"
                 >
-                  <span>Start Your Project</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span className="whitespace-nowrap">Get a Project Estimate</span>
+                  <ArrowUpRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </button>
+
                 <button
                   onClick={() => {
                     const el = document.getElementById('selected-work');
-                    el?.scrollIntoView({ behavior: 'smooth' });
+                    if (el) {
+                      el.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      setActivePage('projects');
+                    }
                   }}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-full border border-[#181818] text-[#181818] font-semibold text-xs uppercase tracking-[0.18em] hover:bg-[#FAF8F5] transition-colors"
+                  className="w-full px-5 py-3 rounded-full border border-[#181818] bg-transparent text-[#181818] font-semibold text-xs uppercase tracking-[0.16em] hover:bg-[#FAF8F5] transition-colors flex items-center justify-center"
                 >
-                  Explore Work
+                  <span className="whitespace-nowrap">Explore Our Projects</span>
+                </button>
+
+                <button
+                  onClick={handleDownloadPortfolio}
+                  className="w-full px-5 py-3 rounded-full border border-[#1468a2] bg-[#1468a2]/10 text-[#1468a2] font-semibold text-xs uppercase tracking-[0.16em] hover:bg-[#1468a2] hover:text-white transition-all flex items-center justify-center space-x-2 group shadow-xs"
+                >
+                  <Download className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5" />
+                  <span className="whitespace-nowrap">Download Our Portfolio</span>
                 </button>
               </div>
             </div>
@@ -410,6 +434,103 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
+      {/* ================= CLIENT PAIN POINTS & SOLUTIONS (COMMITTED SOLUTIONS) ================= */}
+      <section className="py-24 md:py-32 bg-[#FAF8F5] border-b border-[#E2DACD]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+          <SectionHeading
+            label="Client Commitments & Solutions"
+            title="Addressing What Matters Most to You"
+            subtitle="Creating luxury interiors requires more than aesthetics — it demands absolute clarity on budgets, strict timeline control, uncompromised quality, and dedicated aftercare."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CLIENT_SOLUTIONS.map((item) => (
+              <div
+                key={item.id}
+                className="group p-8 rounded-3xl bg-white border border-[#E2DACD] hover:border-[#1468a2] transition-all duration-500 shadow-sm hover:shadow-xl flex flex-col justify-between space-y-6 transform hover:-translate-y-1"
+              >
+                <div className="space-y-4">
+                  {/* Category Pill & Number */}
+                  <div className="flex items-center justify-between">
+                    <span className="px-3.5 py-1 rounded-full bg-[#1468a2]/10 text-[#1468a2] text-[10px] uppercase font-bold tracking-widest border border-[#1468a2]/20">
+                      {item.category}
+                    </span>
+                    <span className="font-mono text-xs text-[#1468a2] font-bold">
+                      {item.number} / 05
+                    </span>
+                  </div>
+
+                  {/* Common Client Concern */}
+                  <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E2DACD]/80 space-y-1">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#181818]/60 block">
+                      Common Client Concern:
+                    </span>
+                    <p className="text-xs text-[#181818] font-medium italic">
+                      "{item.concern}"
+                    </p>
+                  </div>
+
+                  {/* Solution Title & Description */}
+                  <div className="space-y-2 pt-1">
+                    <h3 className="font-serif text-xl text-[#181818] font-normal group-hover:text-[#1468a2] transition-colors leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-[#181818]/80 font-normal leading-relaxed">
+                      {item.solution}
+                    </p>
+                  </div>
+
+                  {/* Key Pillars Checklist */}
+                  <ul className="space-y-2 pt-3 border-t border-[#E2DACD]/60 text-xs text-[#181818]">
+                    {item.keyPoints.map((point, pIdx) => (
+                      <li key={pIdx} className="flex items-start space-x-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#1468a2] shrink-0 mt-0.5" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-4 flex items-center justify-between border-t border-[#E2DACD]/40">
+                  <button
+                    onClick={() => onOpenInquiry(`Inquiry about ${item.category}`)}
+                    className="text-xs uppercase font-bold tracking-wider text-[#1468a2] group-hover:text-[#181818] transition-colors flex items-center space-x-1"
+                  >
+                    <span>Discuss {item.category}</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            {/* Final Summary Card / CTA box */}
+            <div className="p-8 rounded-3xl bg-[#181818] text-[#F5F2EC] flex flex-col justify-between space-y-6 shadow-xl border border-[#38322B]">
+              <div className="space-y-4">
+                <span className="px-3.5 py-1 rounded-full bg-[#1468a2] text-white text-[10px] uppercase font-bold tracking-widest inline-block">
+                  Studio Assurance
+                </span>
+                <h3 className="font-serif text-2xl text-white font-normal leading-snug">
+                  Experience Uncompromised Peace of Mind
+                </h3>
+                <p className="text-sm text-white/85 leading-relaxed font-normal">
+                  Every project at Jain Signature Studio is backed by our strict commitment to zero delay, transparent budgets, and white-glove aftercare.
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-4 border-t border-white/10">
+                <button
+                  onClick={() => onOpenInquiry('Consultation & Pain Point Review')}
+                  className="w-full py-3.5 rounded-full bg-[#1468a2] text-white text-xs font-semibold uppercase tracking-wider hover:bg-white hover:text-[#181818] transition-colors flex items-center justify-center space-x-2 shadow-md"
+                >
+                  <span>Book Free Consultation</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ================= DESIGN PROCESS / METHODOLOGY SECTION (WHITE BACKGROUND) ================= */}
       <section className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -419,26 +540,43 @@ export const HomePage: React.FC<HomePageProps> = ({
             subtitle="Our structured five-stage architectural process ensures precision, transparency, and serene delivery."
           />
 
-          {/* Process Steps Cards */}
+          {/* Process Steps Cards with Images */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6 relative">
             {PROCESS_STEPS.map((step, idx) => (
               <div
                 key={step.number}
-                className="group p-6 rounded-2xl bg-[#FAF8F5] border border-[#E2DACD] hover:border-[#1468a2] transition-all duration-500 flex flex-col justify-between min-h-[250px] md:min-h-[270px] shadow-xs hover:shadow-lg transform hover:-translate-y-1"
+                className="group rounded-2xl bg-[#FAF8F5] border border-[#E2DACD] hover:border-[#1468a2] transition-all duration-500 overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl transform hover:-translate-y-1.5"
               >
-                <div>
-                  <span className="text-2xl md:text-3xl font-serif font-medium text-[#1468a2] block mb-2">
-                    {step.number}
-                  </span>
-                  <h3 className="font-serif text-lg md:text-xl text-[#181818] font-normal mb-2 group-hover:text-[#1468a2] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#181818] font-normal leading-relaxed">
-                    {step.desc}
-                  </p>
+                {/* Stage Process Image Header */}
+                <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-[#181818]">
+                  <img
+                    src={step.image}
+                    alt={`${step.title} - ${step.number}`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <span className="w-8 h-8 rounded-full bg-white/95 text-[#1468a2] text-xs font-serif font-bold flex items-center justify-center shadow-md">
+                      {step.number}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-3 left-3">
+                    <span className="text-[10px] uppercase tracking-widest font-mono text-white font-bold bg-[#1468a2] px-2.5 py-0.5 rounded-full shadow-xs">
+                      STAGE 0{idx + 1}
+                    </span>
+                  </div>
                 </div>
-                <div className="mt-4 pt-3 border-t border-[#E2DACD] text-[11px] font-mono font-bold text-[#1468a2] tracking-widest">
-                  STAGE 0{idx + 1}
+
+                {/* Stage Text Details */}
+                <div className="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-3">
+                  <div>
+                    <h3 className="font-serif text-lg sm:text-xl text-[#181818] font-semibold mb-2 group-hover:text-[#1468a2] transition-colors leading-snug">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-[#181818]/80 font-normal leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -490,29 +628,90 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* ================= TESTIMONIALS / CLIENT WORDS (WHITE BACKGROUND) ================= */}
       <section className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
           <SectionHeading
-            label="Client Words"
+            label="Client Words & Google Reviews"
             title="Words From Our Clients"
-            subtitle="Discreet feedback from homeowners, villa developers, and business owners."
+            subtitle="Verified Google Maps reviews and discreet feedback from homeowners, villa developers, and business owners."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((t) => (
+          {/* Sliding Google Reviews Carousel */}
+          <GoogleReviewsSlider />
+        </div>
+      </section>
+
+      {/* ================= LOCAL SEO & PRIME SERVICE COVERAGE SECTION ================= */}
+      <section id="service-locations" className="py-24 md:py-32 bg-[#FAF8F5] border-b border-[#E2DACD]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+          <SectionHeading
+            label="Geographical Coverage & Local Presence"
+            title="Serving Ghaziabad, Noida, Greater Noida & Delhi NCR"
+            subtitle="Connecting discerning homeowners, villa developers, and commercial visionaries with award-winning architectural and interior design mastery."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {SERVICE_LOCATIONS.map((loc) => (
               <div
-                key={t.id}
-                className="p-8 md:p-10 lg:p-12 rounded-3xl bg-[#FAF8F5] border border-[#E2DACD] flex flex-col justify-between space-y-8 shadow-sm hover:shadow-xl transition-all duration-300"
+                key={loc.id}
+                className="group rounded-3xl bg-white border border-[#E2DACD] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between"
               >
-                <div className="space-y-4">
-                  <span className="font-serif text-5xl text-[#1468a2] leading-none block">“</span>
-                  <p className="text-base md:text-lg lg:text-xl text-[#181818] font-normal italic leading-relaxed">
-                    {t.quote}
-                  </p>
+                <div className="relative h-64 w-full overflow-hidden bg-[#181818]">
+                  <img
+                    src={loc.image}
+                    alt={loc.seoHeading}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3.5 py-1.5 rounded-full bg-white/95 text-[#181818] text-[10px] uppercase font-bold tracking-widest shadow-md">
+                      {loc.badge}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 space-y-1">
+                    <span className="text-xs uppercase font-bold tracking-widest text-[#1468a2] block">
+                      {loc.city} Regional Expertise
+                    </span>
+                    <h3 className="font-serif text-xl sm:text-2xl text-white font-normal leading-snug">
+                      {loc.seoHeading}
+                    </h3>
+                  </div>
                 </div>
-                <div className="pt-6 border-t border-[#E2DACD] space-y-1">
-                  <h4 className="font-serif text-lg md:text-xl text-[#181818] font-semibold">{t.clientName}</h4>
-                  <div className="text-xs md:text-sm text-[#1468a2] font-semibold uppercase tracking-wider">
-                    {t.role} • {t.location}
+
+                <div className="p-7 sm:p-8 space-y-5 flex-grow flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <p className="text-sm text-[#181818]/85 font-normal leading-relaxed">
+                      {loc.description}
+                    </p>
+
+                    {/* Key Neighborhoods & Enclaves */}
+                    <div>
+                      <span className="text-[10px] uppercase font-bold tracking-[0.18em] text-[#1468a2] block mb-2">
+                        Key Service Sectors & Enclaves:
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {loc.keyNeighborhoods.map((area, idx) => (
+                          <span
+                            key={idx}
+                            className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#E2DACD] text-[#181818] text-[11px] font-medium"
+                          >
+                            {area}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#E2DACD] flex items-center justify-between">
+                    <button
+                      onClick={() => onOpenInquiry(`Consultation for ${loc.city}`)}
+                      className="text-xs uppercase font-bold tracking-wider text-[#1468a2] hover:text-[#181818] transition-colors flex items-center space-x-1"
+                    >
+                      <span>Book {loc.city} Consultation</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </button>
+                    <span className="text-xs text-[#181818]/60 font-mono">
+                      {loc.city} Coverage
+                    </span>
                   </div>
                 </div>
               </div>
@@ -522,7 +721,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* ================= JOURNAL PREVIEW / EDITORIAL (WHITE BACKGROUND) ================= */}
-      <section className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 bg-white border-b border-[#E2DACD]/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
             <SectionHeading
@@ -581,45 +780,8 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================= INSTAGRAM / VISUAL GALLERY (WHITE BACKGROUND) ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center space-y-12">
-          <div>
-            <span className="text-xs uppercase font-semibold tracking-[0.25em] text-[#1468a2] block mb-2">
-              Visual Dialogue
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl text-[#181818]">
-              Follow The Signature
-            </h2>
-            <a
-              href={BRAND_INFO.instagramLink}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-[#1468a2] mt-2 hover:underline"
-            >
-              <span>{BRAND_INFO.instagram}</span>
-            </a>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {GALLERY_IMAGES.map((img, idx) => (
-              <div
-                key={idx}
-                className="group relative rounded-2xl overflow-hidden aspect-square cursor-pointer border border-[#E2DACD]"
-              >
-                <img
-                  src={img.url}
-                  alt={img.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2 text-center text-white text-xs font-medium">
-                  <span>{img.title}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ================= INSTAGRAM / SIGNATURE VIDEO REELS SECTION ================= */}
+      <VideoReelsSection />
     </div>
   );
 };

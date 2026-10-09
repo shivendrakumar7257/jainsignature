@@ -150,6 +150,27 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) 
           </div>
         </div>
 
+        {/* Local SEO & Regional Coverage Bar */}
+        <div className="py-8 border-b border-[#38322B] space-y-4">
+          <span className="text-[11px] uppercase font-bold tracking-[0.2em] text-[#1468a2] block">
+            Prime Regional Footprint & Local SEO Coverage
+          </span>
+          <div className="flex flex-wrap gap-2.5 text-xs text-white/85">
+            <span className="px-3.5 py-1.5 rounded-full bg-[#29241F] border border-[#38322B] hover:border-[#1468a2] transition-colors">
+              Award-Winning Interior Designer in Ghaziabad
+            </span>
+            <span className="px-3.5 py-1.5 rounded-full bg-[#29241F] border border-[#38322B] hover:border-[#1468a2] transition-colors">
+              Luxury Interior Designer in Noida
+            </span>
+            <span className="px-3.5 py-1.5 rounded-full bg-[#29241F] border border-[#38322B] hover:border-[#1468a2] transition-colors">
+              Best Interior Design Company in Delhi NCR
+            </span>
+            <span className="px-3.5 py-1.5 rounded-full bg-[#29241F] border border-[#38322B] hover:border-[#1468a2] transition-colors">
+              Residential and Commercial Interior Designers in Greater Noida
+            </span>
+          </div>
+        </div>
+
         {/* Bottom copyright line */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/70 font-normal gap-4">
           <p>© 2026 Jain Signature Studio. All Rights Reserved.</p>

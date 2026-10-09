@@ -45,12 +45,12 @@ export const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Grid: Form + Studio Details */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
-        {/* Contact Form */}
-        <div className="lg:col-span-7 bg-[#FAF8F5] p-8 md:p-12 lg:p-14 rounded-3xl border border-[#E2DACD] shadow-sm">
+      {/* Main Grid: Form + Studio Details (Equal Height Layout) */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+        {/* Contact Form Card */}
+        <div className="lg:col-span-7 bg-[#FAF8F5] p-8 md:p-10 lg:p-12 rounded-3xl border border-[#E2DACD] shadow-sm flex flex-col justify-between">
           {submitted ? (
-            <div className="text-center py-16 space-y-6">
+            <div className="text-center py-16 space-y-6 my-auto">
               <div className="w-16 h-16 rounded-full bg-[#1468a2]/15 text-[#1468a2] border border-[#1468a2]/30 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10 stroke-[1.5]" />
               </div>
@@ -78,125 +78,127 @@ export const ContactPage: React.FC = () => {
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="border-b border-[#E2DACD] pb-4 mb-2">
-                <h3 className="font-serif text-2xl md:text-3xl text-[#181818] font-normal">Project Intake Form</h3>
-                <p className="text-xs md:text-sm text-[#181818] font-normal mt-1">
-                  Complete the fields below to schedule an introductory consultation.
-                </p>
-              </div>
+            <form onSubmit={handleSubmit} className="space-y-5 flex-grow flex flex-col justify-between">
+              <div className="space-y-5">
+                <div className="border-b border-[#E2DACD] pb-3">
+                  <h3 className="font-serif text-2xl md:text-3xl text-[#181818] font-normal">Project Intake Form</h3>
+                  <p className="text-xs md:text-sm text-[#181818]/80 font-normal mt-1">
+                    Complete the fields below to schedule an introductory consultation.
+                  </p>
+                </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Vikramaditya Sharma"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      Your Name *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Vikramaditya Sharma"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+91 9643431551"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="info@jainstudio.co.in"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      City / Location *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Ghaziabad / Delhi NCR / Noida"
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      Project Type *
+                    </label>
+                    <select
+                      value={formData.projectType}
+                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    >
+                      <option value="Full Home Interiors">Full Home Interiors</option>
+                      <option value="Luxury Villa / Penthouse">Luxury Villa / Penthouse</option>
+                      <option value="Modular Kitchen & Wardrobes">Modular Kitchen & Wardrobes</option>
+                      <option value="Executive Office Interiors">Executive Office / HQ</option>
+                      <option value="Commercial Space">Luxury Commercial Boutique</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                      Approximate Budget *
+                    </label>
+                    <select
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                      className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                    >
+                      <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
+                      <option value="₹50 Lakhs – ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
+                      <option value="₹1 Crore – ₹3 Crores">₹1 Crore – ₹3 Crores</option>
+                      <option value="₹3 Crores+">₹3 Crores+ (Ultra Luxury / Estate)</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    Phone Number *
+                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-1.5">
+                    Message / Spatial Vision Notes
                   </label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 9643431551"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  />
+                  <textarea
+                    rows={3}
+                    placeholder="Share any specific requirements regarding layout, target move-in dates, architect plans..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
+                  ></textarea>
                 </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="info@jainstudio.co.in"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    City / Location *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Ghaziabad / Delhi NCR / Noida"
-                    value={formData.city}
-                    onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    Project Type *
-                  </label>
-                  <select
-                    value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  >
-                    <option value="Full Home Interiors">Full Home Interiors</option>
-                    <option value="Luxury Villa / Penthouse">Luxury Villa / Penthouse</option>
-                    <option value="Modular Kitchen & Wardrobes">Modular Kitchen & Wardrobes</option>
-                    <option value="Executive Office Interiors">Executive Office / HQ</option>
-                    <option value="Commercial Space">Luxury Commercial Boutique</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                    Approximate Budget *
-                  </label>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                  >
-                    <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
-                    <option value="₹50 Lakhs – ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
-                    <option value="₹1 Crore – ₹3 Crores">₹1 Crore – ₹3 Crores</option>
-                    <option value="₹3 Crores+">₹3 Crores+ (Ultra Luxury / Estate)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs uppercase tracking-wider text-[#181818] font-bold mb-2">
-                  Message / Spatial Vision Notes
-                </label>
-                <textarea
-                  rows={4}
-                  placeholder="Share any specific requirements regarding layout, target move-in dates, architect plans..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-base focus:outline-none focus:border-[#1468a2]"
-                ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-[#181818] text-white font-semibold text-xs uppercase tracking-[0.2em] hover:bg-[#1468a2] transition-colors flex items-center justify-center space-x-2 shadow-md"
+                className="w-full py-3.5 mt-4 rounded-full bg-[#181818] text-white font-semibold text-xs uppercase tracking-[0.2em] hover:bg-[#1468a2] transition-colors flex items-center justify-center space-x-2 shadow-md"
               >
                 <span>Send Enquiry</span>
                 <ArrowRight className="w-4 h-4" />
@@ -205,9 +207,10 @@ export const ContactPage: React.FC = () => {
           )}
         </div>
 
-        {/* Studio Info Sidebar & Interactive Google Map Preview */}
-        <div className="lg:col-span-5 space-y-8">
-          <div className="p-8 md:p-10 rounded-3xl bg-[#181818] text-[#F5F2EC] space-y-6 border border-[#38322B] shadow-xl">
+        {/* Studio Concierge & Headquarters Card (Equal Height) */}
+        <div className="lg:col-span-5 bg-[#181818] text-[#F5F2EC] p-8 md:p-10 rounded-3xl border border-[#38322B] shadow-xl flex flex-col justify-between space-y-6">
+          {/* Top: Studio HQ details */}
+          <div className="space-y-4">
             <span className="text-xs uppercase font-semibold tracking-[0.25em] text-[#1468a2]">
               STUDIO HEADQUARTERS
             </span>
@@ -215,58 +218,54 @@ export const ContactPage: React.FC = () => {
               Ghaziabad Studio
             </h3>
 
-            <div className="space-y-4 text-base text-white/95 font-normal">
+            <div className="space-y-3.5 text-sm md:text-base text-white/95 font-normal">
               <a
                 href={BRAND_INFO.mapLink}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-start space-x-3 group hover:text-white transition-colors"
+                className="flex items-start space-x-3 group hover:text-[#1468a2] transition-colors"
               >
                 <MapPin className="w-5 h-5 text-[#1468a2] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                 <span>{BRAND_INFO.address}</span>
               </a>
-              <a href={`tel:${BRAND_INFO.phone}`} className="flex items-center space-x-3 hover:text-white transition-colors">
+              <a href={`tel:${BRAND_INFO.phone}`} className="flex items-center space-x-3 hover:text-[#1468a2] transition-colors">
                 <Phone className="w-5 h-5 text-[#1468a2] shrink-0" />
                 <span>{BRAND_INFO.phone}</span>
               </a>
-              <a href={`mailto:${BRAND_INFO.email}`} className="flex items-center space-x-3 hover:text-white transition-colors">
+              <a href={`mailto:${BRAND_INFO.email}`} className="flex items-center space-x-3 hover:text-[#1468a2] transition-colors">
                 <Mail className="w-5 h-5 text-[#1468a2] shrink-0" />
                 <span>{BRAND_INFO.email}</span>
               </a>
-              <div className="flex items-start space-x-3 pt-2">
+              <div className="flex items-start space-x-3 pt-1">
                 <Clock className="w-5 h-5 text-[#1468a2] shrink-0 mt-0.5" />
                 <span>{BRAND_INFO.hours}</span>
               </div>
             </div>
+          </div>
 
-            <div className="pt-4 border-t border-[#38322B] flex flex-col space-y-3">
-              <button
-                onClick={handleWhatsAppRedirect}
-                className="w-full py-3.5 rounded-full bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md hover:bg-[#20b858] transition-colors"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp Direct Inquiry</span>
-              </button>
-
-              <a
-                href={BRAND_INFO.mapLink}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full py-3.5 rounded-full border border-white/20 text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 hover:bg-white hover:text-[#181818] transition-all"
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>Open Google Maps Directions</span>
-              </a>
+          {/* Middle: Geographical Service Coverage */}
+          <div className="pt-4 border-t border-[#38322B] space-y-2.5">
+            <span className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#1468a2] block">
+              GEOGRAPHICAL SERVICE COVERAGE
+            </span>
+            <p className="text-xs text-white/80 leading-relaxed font-normal">
+              On-site interior design & execution across Ghaziabad, Noida, Greater Noida & Delhi NCR.
+            </p>
+            <div className="flex flex-wrap gap-1.5 pt-1">
+              <span className="px-2.5 py-1 rounded-md bg-[#29241F] text-white/90 border border-[#38322B] text-[11px] font-medium">Ghaziabad</span>
+              <span className="px-2.5 py-1 rounded-md bg-[#29241F] text-white/90 border border-[#38322B] text-[11px] font-medium">Noida</span>
+              <span className="px-2.5 py-1 rounded-md bg-[#29241F] text-white/90 border border-[#38322B] text-[11px] font-medium">Greater Noida</span>
+              <span className="px-2.5 py-1 rounded-md bg-[#29241F] text-white/90 border border-[#38322B] text-[11px] font-medium">Delhi NCR</span>
             </div>
           </div>
 
-          {/* Interactive Map Visual Preview Card */}
-          <div className="rounded-3xl overflow-hidden border border-[#E2DACD] bg-[#181818] relative group">
-            <div className="h-72 w-full relative overflow-hidden">
+          {/* Bottom: Map Location & CTAs */}
+          <div className="pt-4 border-t border-[#38322B] space-y-3.5">
+            <div className="rounded-2xl overflow-hidden h-36 relative group border border-[#38322B]">
               <iframe
                 title="Jain Signature Studio Map Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.7891789!2d77.43!3d28.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDQxJzI0LjAiTiA3N8KwMjUnNDguMCJF!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
-                className="w-full h-full border-0 grayscale invert opacity-75 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                className="w-full h-full border-0 grayscale invert opacity-75 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-500 pointer-events-none"
                 loading="lazy"
               ></iframe>
 
@@ -276,21 +275,25 @@ export const ContactPage: React.FC = () => {
                 href={BRAND_INFO.mapLink}
                 target="_blank"
                 rel="noreferrer"
-                className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center text-white space-y-3"
+                className="absolute inset-0 z-10 flex flex-col items-center justify-center p-3 text-center text-white space-y-1.5"
               >
-                <div className="w-12 h-12 rounded-full bg-[#1468a2] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6 stroke-[2]" />
+                <div className="w-8 h-8 rounded-full bg-[#1468a2] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <MapPin className="w-4 h-4" />
                 </div>
-                <div>
-                  <h4 className="font-serif text-xl font-semibold text-white">GNB Mall Raj Nagar Extension</h4>
-                  <p className="text-xs text-white/80 font-light mt-1">L-08, GNB Mall, Ghaziabad 201017 (UP)</p>
-                </div>
-                <span className="inline-flex items-center space-x-1.5 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] font-semibold uppercase tracking-widest text-white border border-white/30 group-hover:bg-[#1468a2] group-hover:text-white transition-all">
-                  <span>Click for Live Directions</span>
-                  <ExternalLink className="w-3 h-3" />
+                <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[9px] font-semibold uppercase tracking-widest text-white border border-white/30 group-hover:bg-[#1468a2] transition-all">
+                  <span>Click for Directions</span>
+                  <ExternalLink className="w-2.5 h-2.5" />
                 </span>
               </a>
             </div>
+
+            <button
+              onClick={handleWhatsAppRedirect}
+              className="w-full py-3 rounded-full bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md hover:bg-[#20b858] transition-colors"
+            >
+              <MessageSquare className="w-4 h-4" />
+              <span>WhatsApp Direct Inquiry</span>
+            </button>
           </div>
         </div>
       </section>

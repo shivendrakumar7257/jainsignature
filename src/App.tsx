@@ -41,27 +41,27 @@ export function App() {
             onSelectService={setSelectedService}
             onSelectProject={setSelectedProject}
             onSelectArticle={setSelectedArticle}
-            onOpenInquiry={() => handleOpenInquiry()}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
       case 'about':
         return (
           <AboutPage
-            onOpenInquiry={() => handleOpenInquiry()}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
       case 'services':
         return (
           <ServicesPage
             onSelectService={setSelectedService}
-            onOpenInquiry={() => handleOpenInquiry()}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
       case 'projects':
         return (
           <ProjectsPage
             onSelectProject={setSelectedProject}
-            onOpenInquiry={() => handleOpenInquiry()}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
       case 'journal':
@@ -79,7 +79,7 @@ export function App() {
             onSelectService={setSelectedService}
             onSelectProject={setSelectedProject}
             onSelectArticle={setSelectedArticle}
-            onOpenInquiry={() => handleOpenInquiry()}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
     }
@@ -91,7 +91,7 @@ export function App() {
       <Navbar
         activePage={activePage}
         setActivePage={setActivePage}
-        onOpenInquiry={() => handleOpenInquiry()}
+        onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
       />
 
       {/* Main Page View */}

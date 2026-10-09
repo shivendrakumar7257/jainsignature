@@ -95,6 +95,12 @@ export const BRAND_INFO = {
   instagramLink: "https://www.instagram.com/jainsignaturestudio?igsh=Y2prN2VwejhjNW5s",
   facebookLink: "https://www.facebook.com/people/Jain-Signature-Studio-LLP/61586381695060/?rdid=CnYhpifvQIhlfMY1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AoK1swyGt%2F",
   logoUrl: "/logo.svg",
+  serviceAreas: [
+    "Ghaziabad (Raj Nagar Extn, Vasundhara, Indirapuram, Vaishali)",
+    "Noida (Sector 150, Sector 128, Sector 44, Expressway)",
+    "Greater Noida (Jaypee Greens, Tech Zone, Knowledge Park)",
+    "Delhi NCR (South Delhi, Vasant Vihar, Golf Course Road)"
+  ],
   stats: [
     { value: "10+", label: "Years of Experience" },
     { value: "150+", label: "Completed Projects" },
@@ -102,6 +108,149 @@ export const BRAND_INFO = {
     { value: "12", label: "Design & Architectural Awards" }
   ]
 };
+
+export interface ServiceLocation {
+  id: string;
+  city: string;
+  seoHeading: string;
+  subhead: string;
+  description: string;
+  keyNeighborhoods: string[];
+  featuredProjectTypes: string[];
+  badge: string;
+  image: string;
+}
+
+export const SERVICE_LOCATIONS: ServiceLocation[] = [
+  {
+    id: "ghaziabad",
+    city: "Ghaziabad",
+    seoHeading: "Award-Winning Interior Designer in Ghaziabad",
+    subhead: "Flagship Studio & Turnkey Residential Execution",
+    description: "Headquartered at GNB Mall, Raj Nagar Extension, Jain Signature Studio is an award-winning interior designer in Ghaziabad. We craft bespoke luxury residences, penthouses, and executive villas across Ghaziabad's premier enclaves.",
+    keyNeighborhoods: ["Raj Nagar Extension", "Vasundhara", "Indirapuram", "Vaishali", "Kavi Nagar"],
+    featuredProjectTypes: ["Luxury Villa Interiors", "Duplex Penthouses", "Custom Modular Kitchens", "Turnkey Renovations"],
+    badge: "Studio Location",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
+  },
+  {
+    id: "noida",
+    city: "Noida",
+    seoHeading: "Luxury Interior Designer in Noida",
+    subhead: "Ultra-Premium High-Rise & Expressway Living",
+    description: "As a leading luxury interior designer in Noida, our studio creates timeless modern spaces along the Noida Expressway and prime sectors. We balance architectural precision with opulent Italian finishes and smart living integration.",
+    keyNeighborhoods: ["Sector 150", "Sector 128", "Sector 44", "Sector 75", "Sector 104"],
+    featuredProjectTypes: ["High-Rise Luxury Apartments", "Ocean-View Style Lounges", "Spa Sanctuary Bathrooms", "Italian Marble Fitouts"],
+    badge: "Prime Coverage",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
+  },
+  {
+    id: "delhi-ncr",
+    city: "Delhi NCR",
+    seoHeading: "Best Interior Design Company in Delhi NCR",
+    subhead: "Region-Wide Turnkey Architectural Mastery",
+    description: "Renowned as the best interior design company in Delhi NCR, Jain Signature Studio brings comprehensive turnkey masterplanning to sprawling farmhouses, heritage bungalows, and ultra-modern executive spaces across South Delhi and the National Capital Region.",
+    keyNeighborhoods: ["South Delhi", "Vasant Vihar", "Golf Course Road", "Sainik Farms", "Chhatarpur"],
+    featuredProjectTypes: ["Farmhouse Masterplanning", "Commercial Headquarters", "Bespoke Joinery", "Smart Home Engineering"],
+    badge: "Capital Coverage",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+  },
+  {
+    id: "greater-noida",
+    city: "Greater Noida",
+    seoHeading: "Residential and Commercial Interior Designers in Greater Noida",
+    subhead: "Golf Estate Villas & Corporate Headquarters",
+    description: "Recognized among top residential and commercial interior designers in Greater Noida, we specialize in high-end golf course villas, tech park corporate fitouts, and expansive commercial retail destinations.",
+    keyNeighborhoods: ["Jaypee Greens", "Tech Zone", "Knowledge Park", "Delta & Alpha Sectors", "Surajpur"],
+    featuredProjectTypes: ["Golf Villa Estates", "Corporate Offices", "Bespoke Furniture", "Turnkey Commercial Retail"],
+    badge: "Expanded Footprint",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+  }
+];
+
+export interface ClientSolution {
+  id: string;
+  number: string;
+  category: string;
+  concern: string;
+  title: string;
+  solution: string;
+  keyPoints: string[];
+  iconName: string;
+}
+
+export const CLIENT_SOLUTIONS: ClientSolution[] = [
+  {
+    id: "timelines",
+    number: "01",
+    category: "Project Timelines",
+    concern: "Will my project face endless delays and shifting move-in dates?",
+    title: "Guaranteed Milestone Schedules & Timely Handover",
+    solution: "We establish a binding, milestone-mapped project schedule prior to site commencement. With daily site tracking and dedicated project managers, we deliver on time without compromising on detail.",
+    keyPoints: [
+      "Binding completion schedule with defined phase deadlines",
+      "Weekly milestone updates & live photo progress logs",
+      "Dedicated procurement team ensuring zero material lag"
+    ],
+    iconName: "Clock"
+  },
+  {
+    id: "budget-transparency",
+    number: "02",
+    category: "Budget Transparency",
+    concern: "Will there be unexpected price spikes or hidden extra charges?",
+    title: "100% Transparent Itemized Quotations & No Hidden Costs",
+    solution: "We provide comprehensive BOQs (Bill of Quantities) with complete specifications, material brands, and unit pricing before execution starts. Scope or design changes are only processed with prior written approval.",
+    keyPoints: [
+      "Itemized BOQ detailing exact quantities, brands & rates",
+      "Fixed pricing structure with zero surprise surcharges",
+      "Clear advance notice & approval for any client-requested additions"
+    ],
+    iconName: "ShieldCheck"
+  },
+  {
+    id: "quality-assurance",
+    number: "03",
+    category: "Quality Assurance",
+    concern: "How can I be sure about material authenticity and long-term durability?",
+    title: "Rigorous Material Audits & 100+ Quality Inspection Checks",
+    solution: "From vein-matched Italian marble to boiling-water-proof (BWP) marine ply and anti-fingerprint laminates, every batch is verified. Our multi-tier quality inspection ensures structural integrity and flawless fit-and-finish.",
+    keyPoints: [
+      "Certified premium materials sourced directly from verified brands",
+      "Multi-tier quality inspections before final installation",
+      "Precision German joinery fittings & acoustic dampening"
+    ],
+    iconName: "Award"
+  },
+  {
+    id: "communication",
+    number: "04",
+    category: "Communication",
+    concern: "Will I have to constantly follow up with multiple contractors?",
+    title: "Single Point of Contact & Transparent Communication",
+    solution: "You get a dedicated Senior Interior Architect as your single point of contact. Say goodbye to coordinating with plumbers, carpenters, and electricians — we manage everything seamlessly.",
+    keyPoints: [
+      "One dedicated Senior Architect managing all trades & vendors",
+      "Weekly structured WhatsApp & email updates with site media",
+      "Transparent direct access to studio leadership"
+    ],
+    iconName: "UserCheck"
+  },
+  {
+    id: "aftercare-support",
+    number: "05",
+    category: "Aftercare & Support",
+    concern: "What happens if issues arise after handover and final payment?",
+    title: "Comprehensive Post-Completion Warranty & Concierge Care",
+    solution: "Our relationship extends well beyond handover. We back our craftsmanship with structured warranty coverage, rapid-response maintenance support, and complimentary post-handover health checks.",
+    keyPoints: [
+      "Comprehensive warranty coverage on structural joinery & fitouts",
+      "Dedicated concierge support for quick maintenance response",
+      "Complimentary 6-month post-handover wellness inspection"
+    ],
+    iconName: "HeartHandshake"
+  }
+];
 
 export const SERVICES_DATA: Service[] = [
   {
@@ -397,27 +546,32 @@ export const PROCESS_STEPS = [
   {
     number: "01",
     title: "Consultation",
-    desc: "Understanding your lifestyle, architectural requirements, spatial aspirations, and vision through an intimate design dialogue."
+    desc: "Understanding your lifestyle, architectural requirements, spatial aspirations, and vision through an intimate design dialogue.",
+    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=85"
   },
   {
     number: "02",
     title: "Concept",
-    desc: "Developing the overarching design direction, moodboards, material palettes, spatial flow diagrams, and preliminary 3D concepts."
+    desc: "Developing the overarching design direction, moodboards, material palettes, spatial flow diagrams, and preliminary 3D concepts.",
+    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=85"
   },
   {
     number: "03",
     title: "Design Development",
-    desc: "Photorealistic rendering, millimeter-precise architectural drawings, custom furniture design, and material sample approvals."
+    desc: "Photorealistic rendering, millimeter-precise architectural drawings, custom furniture design, and material sample approvals.",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85"
   },
   {
     number: "04",
     title: "Execution",
-    desc: "Coordinating master craftsmen, turnkey structural modifications, on-site quality audits, and seamless project management."
+    desc: "Coordinating master craftsmen, turnkey structural modifications, on-site quality audits, and seamless project management.",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=85"
   },
   {
     number: "05",
     title: "Final Reveal",
-    desc: "White-glove styling, soft furnishing placement, deep cleaning, and handing over a finished space that feels distinctly and unmistakably yours."
+    desc: "White-glove styling, soft furnishing placement, deep cleaning, and handing over a finished space that feels distinctly and unmistakably yours.",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85"
   }
 ];
 
