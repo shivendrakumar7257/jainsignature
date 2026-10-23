@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowUpRight, Phone, Mail, Download } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Phone, Mail } from 'lucide-react';
 import { BRAND_INFO } from '../data/studioData';
 
 interface NavbarProps {
@@ -24,15 +24,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
     setActivePage(id);
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleDownloadPortfolio = () => {
-    const link = document.createElement('a');
-    link.href = '/Jain_Signature_Studio_Portfolio.pdf';
-    link.download = 'Jain_Signature_Studio_Portfolio.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -110,8 +101,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
         </div>
 
         {/* Main Navbar */}
-        <div className="bg-white border-b border-[#E2DACD] py-2 md:py-2.5">
-          <div className="w-full max-w-[1650px] mx-auto px-4 md:px-8 xl:px-12 flex items-center justify-between">
+        <div className="bg-white/95 backdrop-blur-md border-b border-[#E2DACD] py-3.5 md:py-4 transition-all duration-300">
+          <div className="w-full max-w-[1650px] mx-auto px-6 md:px-10 xl:px-16 flex items-center justify-between">
             {/* Official Logo Image */}
             <button
               onClick={() => handleNavClick('home')}
@@ -121,17 +112,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
               <img
                 src={BRAND_INFO.logoUrl}
                 alt="Jain Signature Studio"
-                className="h-8 md:h-9.5 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-8.5 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </button>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-9">
+            <nav className="hidden lg:flex items-center space-x-7 xl:space-x-10">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`text-xs xl:text-[13px] uppercase tracking-[0.16em] font-semibold transition-all duration-300 relative py-1 focus:outline-none ${
+                  className={`text-xs xl:text-[13px] uppercase tracking-[0.18em] font-semibold transition-all duration-300 relative py-1 focus:outline-none ${
                     activePage === item.id
                       ? 'text-[#1468a2]'
                       : 'text-[#181818]/80 hover:text-[#181818]'
@@ -145,19 +136,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
               ))}
             </nav>
 
-            {/* Desktop CTA Buttons */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <button
-                onClick={handleDownloadPortfolio}
-                className="text-xs uppercase tracking-[0.14em] px-4 py-2 rounded-full border border-[#1468a2]/40 bg-[#1468a2]/10 text-[#1468a2] font-semibold transition-all duration-300 flex items-center space-x-1.5 hover:bg-[#1468a2] hover:text-white shadow-xs"
-              >
-                <Download className="w-3.5 h-3.5 shrink-0" />
-                <span>Download Portfolio</span>
-              </button>
-
+            {/* Desktop CTA Button */}
+            <div className="hidden lg:flex items-center">
               <button
                 onClick={() => onOpenInquiry('Book a Free Consultation')}
-                className="text-xs uppercase tracking-[0.14em] px-5 py-2.5 rounded-full border border-[#1468a2] bg-[#1468a2] text-white font-semibold transition-all duration-300 flex items-center space-x-1.5 group hover:bg-[#181818] hover:border-[#181818] shadow-sm"
+                className="text-xs uppercase tracking-[0.16em] px-6 py-2.5 rounded-full border border-[#1468a2] bg-[#1468a2] text-white font-semibold transition-all duration-300 flex items-center space-x-2 group hover:bg-[#181818] hover:border-[#181818] shadow-sm hover:shadow-md"
               >
                 <span>Book Free Consultation</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -168,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle Navigation Menu"
-              className="lg:hidden p-2 rounded-full text-[#181818]"
+              className="lg:hidden p-2 rounded-full text-[#181818] hover:bg-[#FAF8F5] transition-colors"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -224,17 +207,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
             >
               <span>Book Free Consultation</span>
               <ArrowUpRight className="w-4 h-4" />
-            </button>
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                handleDownloadPortfolio();
-              }}
-              className="w-full py-2.5 rounded-full border border-[#1468a2]/50 bg-[#1468a2]/20 text-white font-medium uppercase tracking-[0.14em] text-xs flex items-center justify-center space-x-2 hover:bg-[#1468a2] transition-colors"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download Portfolio</span>
             </button>
 
             <button
