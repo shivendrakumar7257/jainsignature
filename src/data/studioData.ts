@@ -45,6 +45,7 @@ export interface Testimonial {
   role: string;
   location: string;
   projectType: string;
+  videoUrl?: string;
 }
 
 export interface TeamMember {
@@ -599,6 +600,15 @@ export const CORE_PRINCIPLES = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "video-review",
+    quote: "Jain Signature Studio transformed our residence with millimeter precision. Their dedication to material perfection, Italian marble detailing, and seamless turnkey execution made the journey completely stress-free.",
+    clientName: "Mr. R. K. Jain & Family",
+    role: "Villa Homeowner",
+    location: "Raj Nagar Extension, Ghaziabad",
+    projectType: "Full Villa Interior Handover",
+    videoUrl: "/testimonials/client-review.mp4"
+  },
   {
     id: "1",
     quote: "Jain Signature transformed our Ghaziabad duplex into an architectural masterpiece. Their dedication to material perfection and millimeter precision made the entire process effortless and truly enjoyable.",

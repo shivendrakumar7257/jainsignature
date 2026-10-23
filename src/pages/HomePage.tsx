@@ -16,6 +16,7 @@ import { ServiceCard } from '../components/ServiceCard';
 import { ProjectCard } from '../components/ProjectCard';
 import { GoogleReviewsSlider } from '../components/GoogleReviewsSlider';
 import { VideoReelsSection } from '../components/VideoReelsSection';
+import { ClientVideoTestimonial } from '../components/ClientVideoTestimonial';
 
 interface HomePageProps {
   setActivePage: (page: string) => void;
@@ -626,20 +627,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================= TESTIMONIALS / CLIENT WORDS (WHITE BACKGROUND) ================= */}
-      <section className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
-          <SectionHeading
-            label="Client Words & Google Reviews"
-            title="Words From Our Clients"
-            subtitle="Verified Google Maps reviews and discreet feedback from homeowners, villa developers, and business owners."
-          />
-
-          {/* Sliding Google Reviews Carousel */}
-          <GoogleReviewsSlider />
-        </div>
-      </section>
-
       {/* ================= LOCAL SEO & PRIME SERVICE COVERAGE SECTION ================= */}
       <section id="service-locations" className="py-24 md:py-32 bg-[#FAF8F5] border-b border-[#E2DACD]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
@@ -782,6 +769,23 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* ================= INSTAGRAM / SIGNATURE VIDEO REELS SECTION ================= */}
       <VideoReelsSection />
+
+      {/* ================= TESTIMONIALS & CLIENT WORDS (GRAND FINALE - LAST SECTION OF HOMEPAGE) ================= */}
+      <section id="testimonials" className="py-24 md:py-32 bg-[#FAF8F5] border-t border-[#E2DACD]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+          <SectionHeading
+            label="Client Words & Video Testimonial"
+            title="Real Words. Real Experiences."
+            subtitle="Watch authentic on-site video reviews from our homeowners and explore verified Google Maps ratings across Ghaziabad, Noida, and Delhi NCR."
+          />
+
+          {/* Client Video Testimonial Showcase with Autoplay Video & Controls */}
+          <ClientVideoTestimonial onOpenInquiry={onOpenInquiry} />
+
+          {/* Sliding Google Reviews Carousel */}
+          <GoogleReviewsSlider />
+        </div>
+      </section>
     </div>
   );
 };
