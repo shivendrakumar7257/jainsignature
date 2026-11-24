@@ -258,12 +258,18 @@ export const HomePage: React.FC<HomePageProps> = ({
 
             {/* Right Column: Story & Narrative Aligned with Image */}
             <div className="lg:col-span-6 space-y-6 flex flex-col justify-center">
-              <p className="text-lg md:text-xl text-[#181818] font-normal leading-relaxed">
-                Jain Signature Studio LLP is an acclaimed luxury interior design & architecture studio based in Ghaziabad, UP. Founded over a decade ago, we specialize in high-end residential estates, luxury penthouses, modular fitouts, and commercial environments across India.
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#181818] font-normal leading-[1.25]">
+                An acclaimed luxury interior design & architecture studio based in <span className="italic text-[#1468a2]">Ghaziabad, UP.</span>
+              </h3>
+              
+              <p className="font-sans text-sm sm:text-base text-[#181818]/85 font-normal leading-relaxed">
+                Founded over a decade ago, <strong className="font-semibold text-[#181818]">Jain Signature Studio LLP</strong> specializes in high-end residential estates, luxury penthouses, modular fitouts, and commercial environments across India.
               </p>
-              <p className="text-base md:text-lg text-[#181818] font-normal leading-relaxed">
+
+              <p className="font-sans text-xs sm:text-sm text-[#181818]/70 font-normal leading-relaxed pl-4 border-l-2 border-[#1468a2]">
                 Our practice harmonizes emotional serenity, material authenticity, and architectural precision. From civil masterplanning to white-glove styling, we compose spaces that remain timeless across generations.
               </p>
+              
               <div className="pt-2">
                 <button
                   onClick={() => setActivePage('about')}

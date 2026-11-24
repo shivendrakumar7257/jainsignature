@@ -19,7 +19,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
     phone: '',
     city: 'Mumbai',
     projectType: preselectedService || 'Full Home Interiors',
-    budget: '₹25 Lakhs – ₹35 Lakhs',
+    budget: '₹5 Lakhs – ₹10 Lakhs',
     message: ''
   });
 
@@ -116,14 +116,19 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
 
                 <div>
                   <label className="block text-xs uppercase tracking-wider text-[#181818]/70 font-semibold mb-2">
-                    Phone Number *
+                    Phone Number (10 digits) *
                   </label>
                   <input
                     type="tel"
                     required
-                    placeholder="+91 98765 43210"
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    placeholder="9876543210"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/\D/g, '').slice(0, 10);
+                      setFormData({ ...formData, phone: val });
+                    }}
                     className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
                   />
                 </div>
@@ -187,6 +192,9 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
                   >
+                    <option value="₹5 Lakhs – ₹10 Lakhs">₹5 Lakhs – ₹10 Lakhs</option>
+                    <option value="₹10 Lakhs – ₹15 Lakhs">₹10 Lakhs – ₹15 Lakhs</option>
+                    <option value="₹15 Lakhs – ₹25 Lakhs">₹15 Lakhs – ₹25 Lakhs</option>
                     <option value="₹25 Lakhs – ₹35 Lakhs">₹25 Lakhs – ₹35 Lakhs</option>
                     <option value="₹35 Lakhs – ₹45 Lakhs">₹35 Lakhs – ₹45 Lakhs</option>
                     <option value="₹45 Lakhs – ₹55 Lakhs">₹45 Lakhs – ₹55 Lakhs</option>

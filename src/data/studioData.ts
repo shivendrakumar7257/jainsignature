@@ -89,7 +89,7 @@ export const BRAND_INFO = {
   whatsappLink: "https://api.whatsapp.com/send/?phone=919643431551&text&type=phone_number&app_absent=0",
   email: "info@jainstudio.co.in",
   inquiryEmail: "info@jainstudio.co.in",
-  address: "LG-08 GNB Mall Raj Nagar Extn, Ghaziabad 201017 (UP)",
+  address: "LG-08, GNB mall, Raj Nagar Extension Rd, Raj Nagar Extension, Ghaziabad, Uttar Pradesh 201003",
   mapLink: "https://maps.app.goo.gl/tnPgX2LfF1T8Q9LGA",
   hours: "Monday – Saturday: 10:00 AM – 7:00 PM (By Appointment Only)",
   instagram: "@jainsignaturestudiollp",
@@ -474,6 +474,294 @@ export const SERVICES_DATA: Service[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
+    id: "ivory-gallery-kitchen",
+    name: "Ivory Gallery Kitchen (slightly blurry)",
+    location: "Raj Nagar Extension, Ghaziabad",
+    category: "Residential",
+    year: "2025",
+    image: "/projects/ivory-gallery-kitchen.jpg",
+    gallery: [
+      "/projects/ivory-gallery-kitchen.jpg",
+      "/projects/signature-marble-kitchen.jpg",
+      "/projects/aurora-line-kitchen.jpg"
+    ],
+    overview: "A timeless country-classical gallery kitchen crafted with hand-profiled ivory raised-panel cabinetry, classic brass bin-pull hardware, floral ceramic tile backsplashes, and durable jet-black granite work surfaces.",
+    concept: "Classic Country Elegance — blending traditional ivory paneled joinery with artisanal ceramic tile patterns and high-performance granite countertops.",
+    materials: [
+      "Hand-Profiled Ivory Shaker Doors",
+      "Artisanal Moroccan Pattern Ceramic Tiles",
+      "Jet Black Granite Countertops",
+      "Solid Brass Hardware",
+      "Natural Grain Oak Flooring"
+    ],
+    area: "220 sq. ft.",
+    clientType: "Residential Villa Kitchen"
+  },
+  {
+    id: "aurora-line-modular-kitchen",
+    name: "Aurora Line Modular Kitchen",
+    location: "Sector 150, Noida Expressway",
+    category: "Luxury",
+    year: "2026",
+    image: "/projects/aurora-line-kitchen.jpg",
+    gallery: [
+      "/projects/aurora-line-kitchen.jpg",
+      "/projects/signature-marble-kitchen.jpg",
+      "/projects/nova-marble-kitchen.jpg"
+    ],
+    overview: "An ultra-sleek, handleless contemporary kitchen defined by continuous under-counter and under-cabinet warm LED illumination. Features seamless Statuario marble backsplashes, slate grey anti-fingerprint cabinetry, and integrated soft-close Blum hardware.",
+    concept: "Linear Radiance — pairing continuous architectural LED light channels with honed white marble slabs and minimalist slate cabinetry.",
+    materials: [
+      "Continuous Warm LED Linear Channels",
+      "Seamless Statuario Marble Slabs",
+      "Anti-Fingerprint Slate Acrylic",
+      "Concealed J-Pull Handles",
+      "German Blumotion Drawers"
+    ],
+    area: "320 sq. ft.",
+    clientType: "Modern Penthouse"
+  },
+  {
+    id: "the-aura-marble-washroom",
+    name: "The Aura Marble Washroom",
+    location: "Raj Nagar Extension, Ghaziabad",
+    category: "Luxury",
+    year: "2025",
+    image: "/projects/aura-marble-washroom.jpg",
+    gallery: [
+      "/projects/aura-marble-washroom.jpg",
+      "/projects/the-calmness-suite.jpg",
+      "/projects/contemporary-glow-panel.jpg"
+    ],
+    overview: "A dramatic private spa sanctuary completely wrapped in floor-to-ceiling book-matched Statuario marble slabs with bold charcoal and gold veining. Features a custom floating marble-wrapped vanity, wall-hung concealed cistern commode, and warm recessed ambient cove lighting.",
+    concept: "Monolithic Serenity — creating seamless architectural continuity using book-matched marble veining across walls, vanity fronts, and overhead joinery.",
+    materials: [
+      "Book-Matched Statuario Marble",
+      "Fluted Marble Vanity Fronts",
+      "Concealed Wall-Hung Geberit Cistern",
+      "Matte Black Designer Sanitaryware",
+      "Recessed Anti-Fog Lighting"
+    ],
+    area: "110 sq. ft.",
+    clientType: "Private Master Suite"
+  },
+  {
+    id: "the-horizon-slide-closet",
+    name: "The Horizon Slide Closet",
+    location: "Indirapuram, Ghaziabad",
+    category: "Residential",
+    year: "2025",
+    image: "/projects/horizon-slide-closet.jpg",
+    gallery: [
+      "/projects/horizon-slide-closet.jpg",
+      "/projects/the-calmness-suite.jpg",
+      "/projects/zen-heart-bedroom.jpg"
+    ],
+    overview: "A custom floor-to-ceiling sliding wardrobe featuring a dual-tone horizontal split in cloud white and slate blue. Fitted with full-height recessed black edge profiles, overhead storage lofts, and integrated interior sensor lighting.",
+    concept: "Horizontal Colorblocking — utilizing crisp two-tone geometry to visually expand bedroom ceiling heights while maximizing concealed vertical storage.",
+    materials: [
+      "Two-Tone Slate Blue & Cloud White Acrylic",
+      "Full-Height Anodized Black Aluminum Profiles",
+      "Heavy-Duty Soft-Close Sliding Track System",
+      "Internal Sensor-Activated LED Strips",
+      "BWP Marine-Grade Ply Carcass"
+    ],
+    area: "140 sq. ft. Storage",
+    clientType: "Residential Apartment"
+  },
+  {
+    id: "contemporary-glow-panel-design",
+    name: "Contemporary Glow Panel Design",
+    location: "Jaypee Greens, Greater Noida",
+    category: "Luxury",
+    year: "2026",
+    image: "/projects/contemporary-glow-panel.jpg",
+    gallery: [
+      "/projects/contemporary-glow-panel.jpg",
+      "/projects/golden-glow-panel.jpg",
+      "/projects/ambient-elegance-corner.jpg"
+    ],
+    overview: "A statement architectural media wall integrating an expansive organic swirling granite slab, deep Prussian blue vertical fluted acoustic slats, an open display curio, and a minimalist floating media ledge with gold accent legs.",
+    concept: "Organic Geometry — juxtaposing wild natural stone veining against precision vertical CNC fluting and floating horizontal planes.",
+    materials: [
+      "Exotic Swirling Natural Stone Slab",
+      "Prussian Blue CNC Fluted MDF Paneling",
+      "High-Gloss White Lacquered Storage",
+      "Brushed Brass Pedestal Accents",
+      "Concealed Perimeter Backlighting"
+    ],
+    area: "450 sq. ft. Living Salon",
+    clientType: "Luxury Villa Living Room"
+  },
+  {
+    id: "the-zen-heart-bedroom",
+    name: "The Zen Heart Bedroom (slightly blurry)",
+    location: "Vasundhara, Ghaziabad",
+    category: "Residential",
+    year: "2025",
+    image: "/projects/zen-heart-bedroom.jpg",
+    gallery: [
+      "/projects/zen-heart-bedroom.jpg",
+      "/projects/horizon-slide-closet.jpg",
+      "/projects/the-calmness-suite.jpg"
+    ],
+    overview: "A tranquil master sanctuary anchored by a custom vertical-fluted beige upholstered headboard with rich saddle leather trims. Framed by classic wall mouldings, botanical floral mural art, and sculptural gold torch sconces for soothing evening warmth.",
+    concept: "Botanical Serenity — harmonizing neoclassic boiserie wall mouldings, warm fabric fluting, and ambient gold illumination for restful sleep.",
+    materials: [
+      "Fluted Velvet & Vegan Leather Headboard",
+      "Hand-Painted Floral Botanical Mural",
+      "PU Lacquered Boiserie Mouldings",
+      "Sculptural Gold Torch Wall Sconces",
+      "Warm 3000K Architectural Coving"
+    ],
+    area: "280 sq. ft.",
+    clientType: "Master Bedroom Suite"
+  },
+  {
+    id: "golden-glow-feature-panel",
+    name: "Golden Glow Feature Panel",
+    location: "Raj Nagar Extension, Ghaziabad",
+    category: "Luxury",
+    year: "2026",
+    image: "/projects/golden-glow-panel.jpg",
+    gallery: [
+      "/projects/golden-glow-panel.jpg",
+      "/projects/ambient-elegance-corner.jpg",
+      "/projects/contemporary-glow-panel.jpg"
+    ],
+    overview: "An illuminated living room showcase combining a tall reeded glass display cabinet with warm interior LED shelves, a white fluted wall backdrop, a backlit marble TV board, and a floating dual-drawer console.",
+    concept: "Luminescent Vitrine — celebrating warm amber backlighting through textured fluted glass alongside crisp architectural wall slats.",
+    materials: [
+      "Reeded Fluted Glass Door Vitrine",
+      "3000K Amber LED Internal Shelf Lighting",
+      "Off-White CNC Vertical Fluted Paneling",
+      "Backlit Marble Veneer TV Backer",
+      "Solid Teakwood Transition Portal"
+    ],
+    area: "350 sq. ft. Entertainment Room",
+    clientType: "Modern Villa Residence"
+  },
+  {
+    id: "the-signature-marble-kitchen",
+    name: "The Signature Marble Kitchen",
+    location: "GNB Mall Studio Showcase / Ghaziabad",
+    category: "Luxury",
+    year: "2025",
+    image: "/projects/signature-marble-kitchen.jpg",
+    gallery: [
+      "/projects/signature-marble-kitchen.jpg",
+      "/projects/aurora-line-kitchen.jpg",
+      "/projects/nova-marble-kitchen.jpg"
+    ],
+    overview: "A showcase luxury open kitchen accessed through an architectural teakwood portal. Features a trio of matte black & timber cone pendant lamps over the island breakfast counter, seamless Statuario marble cladding, and low-profile grey cabinetry with warm under-counter lighting.",
+    concept: "Architectural Portal — transitioning from living spaces into a light-flooded culinary pavilion using natural wood frames and sculptural pendant illumination.",
+    materials: [
+      "Natural Teakwood Portal Arch",
+      "Matte Black & Timber Cone Pendants",
+      "Seamless Statuario Marble Countertops",
+      "Integrated Kickboard Ambient LEDs",
+      "Matte Grey Soft-Close Modular Joinery"
+    ],
+    area: "310 sq. ft.",
+    clientType: "Bespoke Open Kitchen"
+  },
+  {
+    id: "the-nova-marble-kitchen",
+    name: "The Nova Marble Kitchen",
+    location: "Noida Sector 128",
+    category: "Residential",
+    year: "2025",
+    image: "/projects/nova-marble-kitchen.jpg",
+    gallery: [
+      "/projects/nova-marble-kitchen.jpg",
+      "/projects/signature-marble-kitchen.jpg",
+      "/projects/ivory-gallery-kitchen.jpg"
+    ],
+    overview: "A transitional U-shaped modular kitchen featuring cornflower blue shaker cabinetry, an elaborate white coffered ceiling with recessed spotlights, traditional wicker vegetable pullout baskets, and an angled black glass chimney.",
+    concept: "Transitional Harmony — pairing classic paneled blue cabinetry with coffered ceiling architecture and modern ergonomic pullouts.",
+    materials: [
+      "Cornflower Blue Matte Lacquered Shaker Doors",
+      "Architectural Coffered Tray Ceiling",
+      "Handwoven Natural Wicker Pullout Baskets",
+      "Seamless White Quartz Countertops",
+      "Spanish Mosaic Splash Tiles"
+    ],
+    area: "260 sq. ft.",
+    clientType: "Family Residence Kitchen"
+  },
+  {
+    id: "aurum-curve-designer-door",
+    name: "Aurum Curve Designer Door",
+    location: "Raj Nagar Extension, Ghaziabad",
+    category: "Luxury",
+    year: "2026",
+    image: "/projects/aurum-curve-door.jpg",
+    gallery: [
+      "/projects/aurum-curve-door.jpg",
+      "/projects/ambient-elegance-corner.jpg",
+      "/projects/golden-glow-panel.jpg"
+    ],
+    overview: "A bespoke main entrance portal crafted in natural quarter-cut oak veneer with a carved concentric arch profile and an integrated laser-cut arched metal security grill. Paired with an elongated matte black handle and a warm backlit circular nameplate.",
+    concept: "The Arched Threshold — combining contemporary security requirements with curved classical arch geometry and subtle halo illumination.",
+    materials: [
+      "Quarter-Cut Natural Oak Veneer",
+      "Laser-Cut Arched Steel Security Grill",
+      "Full-Length Matte Black Pull Handle",
+      "Backlit Brass & Acrylic Circular Sign",
+      "Heavy-Duty Concealed Pivot Hinges"
+    ],
+    area: "8 ft. x 3.5 ft. Entrance",
+    clientType: "Private Villa Entrance"
+  },
+  {
+    id: "ambient-elegance-corner",
+    name: "Ambient Elegance Corner",
+    location: "Raj Nagar Extension, Ghaziabad",
+    category: "Luxury",
+    year: "2025",
+    image: "/projects/ambient-elegance-corner.jpg",
+    gallery: [
+      "/projects/ambient-elegance-corner.jpg",
+      "/projects/golden-glow-panel.jpg",
+      "/projects/contemporary-glow-panel.jpg"
+    ],
+    overview: "A multi-dimensional living salon composition featuring a multi-tier crystal chandelier, illuminated ceiling coving, white vertical wall fluting, a backlit marble TV board with floating drawers, a glass vitrine, and a panelled solid teakwood door.",
+    concept: "Layered Illumination — orchestrating crystal ceiling fixtures, warm LED coving, and backlit stone panels to create an ambient evening lounge.",
+    materials: [
+      "Multi-Tier K9 Crystal Chandelier",
+      "Vertical Slender Fluted Wall Slats",
+      "Honed White Marble Floating Media Console",
+      "Custom Solid Teak Panelled Door",
+      "Recessed Warm Ceiling Cove LEDs"
+    ],
+    area: "420 sq. ft.",
+    clientType: "Duplex Living Room"
+  },
+  {
+    id: "the-calmness-suite",
+    name: "The Calmness Suite",
+    location: "Sector 44, Noida",
+    category: "Residential",
+    year: "2026",
+    image: "/projects/the-calmness-suite.jpg",
+    gallery: [
+      "/projects/the-calmness-suite.jpg",
+      "/projects/zen-heart-bedroom.jpg",
+      "/projects/horizon-slide-closet.jpg"
+    ],
+    overview: "A serene, peaceful junior bedroom suite designed in calming pastel blues and sage green accents. Features a full-length scalloped fluted velvet headboard wrapping around the corner, whimsical rabbit watercolor art, a floating study desk, and houndstooth accent seating.",
+    concept: "Nordic Calmness — pairing soft rounded scalloped upholstery with calming natural pastels, minimalist task lighting, and tactile chevron oak floors.",
+    materials: [
+      "Scalloped Sky-Blue Velvet Corner Headboard",
+      "Framed Watercolor Animal Art Prints",
+      "Chevron Engineered Oak Flooring",
+      "Minimalist Matte White Floating Study Desk",
+      "Houndstooth Ceramic Stool"
+    ],
+    area: "210 sq. ft.",
+    clientType: "Junior / Children's Suite"
+  },
+  {
     id: "shivangan-signature-residence",
     name: "Shivangan Signature Residence",
     location: "Raj Nagar Extension, Ghaziabad",
@@ -641,7 +929,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: "video-review",
     quote: "Jain Signature Studio LLP transformed our residence with millimeter precision. Their dedication to material perfection, Italian marble detailing, and seamless turnkey execution made the journey completely stress-free.",
-    clientName: "Mr.Omesh Chaudhary & family",
+    clientName: "Mr. omesh chaudhary & family ",
     role: "Villa Homeowner",
     location: "Raj Nagar Extension, Ghaziabad",
     projectType: "Full Villa Interior Handover",

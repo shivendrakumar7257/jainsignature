@@ -15,7 +15,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonialItem[] = [
     id: 'client-review',
     videoUrl: '/testimonials/client-review.mp4',
     badge: 'Client Review',
-    clientName: "Mr.Omesh Chaudhary & family",
+    clientName: "Mr. omesh chaudhary & family ",
     subtitle: 'Raj Nagar Extension, Ghaziabad',
     rating: 5
   },
@@ -58,11 +58,12 @@ export const ClientVideoTestimonial: React.FC = () => {
 
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
 
-  // Ensure autoplay on mount
+  // Ensure autoplay on mount with muted audio
   useEffect(() => {
     VIDEO_TESTIMONIALS.forEach((item) => {
       const vid = videoRefs.current[item.id];
       if (vid) {
+        vid.muted = true;
         vid.play().then(() => {
           setPlayingState((prev) => ({ ...prev, [item.id]: true }));
         }).catch(() => {
@@ -72,12 +73,27 @@ export const ClientVideoTestimonial: React.FC = () => {
     });
   }, []);
 
+  // Synchronize audio muted state directly with video DOM elements
+  useEffect(() => {
+    VIDEO_TESTIMONIALS.forEach((item) => {
+      const vid = videoRefs.current[item.id];
+      if (vid) {
+        const isMuted = mutedState[item.id] ?? true;
+        vid.muted = isMuted;
+        if (!isMuted) {
+          vid.volume = 1.0;
+        }
+      }
+    });
+  }, [mutedState]);
+
   const togglePlay = (id: string) => {
     const vid = videoRefs.current[id];
     if (vid) {
       if (vid.paused) {
-        vid.play();
-        setPlayingState((prev) => ({ ...prev, [id]: true }));
+        vid.play().then(() => {
+          setPlayingState((prev) => ({ ...prev, [id]: true }));
+        }).catch(() => {});
       } else {
         vid.pause();
         setPlayingState((prev) => ({ ...prev, [id]: false }));
@@ -85,28 +101,39 @@ export const ClientVideoTestimonial: React.FC = () => {
     }
   };
 
-  const toggleMute = (id: string) => {
-    const vid = videoRefs.current[id];
-    if (!vid) return;
+  const toggleMute = (id: string, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
-    const willBeMuted = !vid.muted;
+    const currentlyMuted = mutedState[id] ?? true;
+    const willUnmute = currentlyMuted;
 
-    // If unmuting this video, mute all other videos so audio doesn't clash
-    if (!willBeMuted) {
+    if (willUnmute) {
+      // Unmute target video and mute all other videos so audio doesn't clash
+      const updatedMuted: { [key: string]: boolean } = {};
       VIDEO_TESTIMONIALS.forEach((item) => {
-        const otherVid = videoRefs.current[item.id];
-        if (otherVid && item.id !== id) {
-          otherVid.muted = true;
+        const isTarget = item.id === id;
+        updatedMuted[item.id] = !isTarget;
+        const v = videoRefs.current[item.id];
+        if (v) {
+          if (isTarget) {
+            v.muted = false;
+            v.volume = 1.0;
+            v.play().catch(() => {});
+          } else {
+            v.muted = true;
+          }
         }
       });
-      setMutedState({
-        'client-review': id === 'client-review' ? false : true,
-        'villa-tour': id === 'villa-tour' ? false : true,
-        'craftsmanship': id === 'craftsmanship' ? false : true
-      });
-      vid.muted = false;
+      setMutedState(updatedMuted);
     } else {
-      vid.muted = true;
+      // Mute target video
+      const vid = videoRefs.current[id];
+      if (vid) {
+        vid.muted = true;
+      }
       setMutedState((prev) => ({ ...prev, [id]: true }));
     }
   };
@@ -162,7 +189,7 @@ export const ClientVideoTestimonial: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-black/40 pointer-events-none" />
 
               {/* Top Header Overlay: Badge & Sound Toggle */}
-              <div className="relative z-10 p-4 flex items-center justify-between">
+              <div className="relative z-30 p-4 flex items-center justify-between pointer-events-auto">
                 <div className="flex items-center space-x-1.5">
                   <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold tracking-wider border border-white/20 flex items-center space-x-1.5 shadow-sm">
                     {item.id === 'client-review' ? (
@@ -176,45 +203,48 @@ export const ClientVideoTestimonial: React.FC = () => {
 
                 {/* Unmute / Mute Button */}
                 <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    toggleMute(item.id);
-                  }}
-                  className={`p-2 rounded-full backdrop-blur-md transition-all shadow-md flex items-center space-x-1.5 text-xs font-semibold ${
+                  type="button"
+                  onClick={(e) => toggleMute(item.id, e)}
+                  className={`p-2 sm:p-2.5 rounded-full backdrop-blur-md transition-all shadow-lg flex items-center space-x-1.5 text-xs font-semibold cursor-pointer select-none active:scale-95 ${
                     isMuted
-                      ? 'bg-amber-500/90 hover:bg-amber-500 text-white animate-pulse'
-                      : 'bg-black/60 hover:bg-black/80 text-white border border-white/20'
+                      ? 'bg-amber-500 hover:bg-amber-600 text-white animate-pulse'
+                      : 'bg-black/70 hover:bg-black text-white border border-white/30'
                   }`}
                   aria-label={isMuted ? 'Unmute audio' : 'Mute audio'}
                 >
                   {isMuted ? (
                     <>
                       <VolumeX className="w-3.5 h-3.5" />
-                      <span className="text-[10px] hidden sm:inline">Unmute</span>
+                      <span className="text-[10px] hidden sm:inline font-bold">Unmute</span>
                     </>
                   ) : (
                     <>
                       <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-[10px] hidden sm:inline">Sound On</span>
+                      <span className="text-[10px] hidden sm:inline font-bold">Sound On</span>
                     </>
                   )}
                 </button>
               </div>
 
               {/* Center Play / Pause Floating Toggle Button */}
-              <div
-                onClick={() => togglePlay(item.id)}
-                className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
-              >
+              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                 {!isPlaying && (
-                  <div className="w-14 h-14 rounded-full bg-white/95 text-[#181818] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      togglePlay(item.id);
+                    }}
+                    className="w-14 h-14 rounded-full bg-white/95 text-[#181818] flex items-center justify-center shadow-2xl hover:scale-110 transition-transform pointer-events-auto cursor-pointer"
+                    aria-label="Play video"
+                  >
                     <Play className="w-6 h-6 fill-current ml-0.5" />
-                  </div>
+                  </button>
                 )}
               </div>
 
               {/* Bottom Card Overlay: Stars, Client Name, Subtitle, Fullscreen */}
-              <div className="relative z-10 p-5 space-y-2 pointer-events-none">
+              <div className="relative z-20 p-5 space-y-2 pointer-events-none">
                 {/* 5 Stars Rating */}
                 <div className="flex items-center space-x-1 text-amber-400">
                   {[...Array(item.rating)].map((_, i) => (
