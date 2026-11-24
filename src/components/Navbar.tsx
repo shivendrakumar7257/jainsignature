@@ -16,6 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
     { id: 'projects', label: 'Projects' },
+    { id: 'gallery', label: 'Gallery' },
     { id: 'journal', label: 'Journal' },
     { id: 'contact', label: 'Contact' },
   ];

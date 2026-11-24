@@ -8,7 +8,8 @@ import {
   CORE_PRINCIPLES,
   ARTICLES_DATA,
   SERVICE_LOCATIONS,
-  CLIENT_SOLUTIONS
+  CLIENT_SOLUTIONS,
+  GALLERY_IMAGES
 } from '../data/studioData';
 import type { Service, Project, Article } from '../data/studioData';
 import { SectionHeading } from '../components/SectionHeading';
@@ -94,7 +95,7 @@ export const HomePage: React.FC<HomePageProps> = ({
     : PROJECTS_DATA.filter(p => p.category === activeProjectCategory);
 
   const serviceCategories = ['All', 'Residential', 'Custom Fitouts', 'Commercial & Office', 'Bespoke Details'];
-  const projectCategories = ['All', 'Luxury', 'Residential', 'Office', 'Commercial'];
+  const projectCategories = ['All', 'Luxury', 'Residential'];
 
   return (
     <div className="space-y-0 bg-white">
@@ -429,6 +430,69 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="px-8 py-4 rounded-full border border-white/40 text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#1468a2] hover:border-[#1468a2] hover:text-white transition-all duration-300"
             >
               View Entire Portfolio ({PROJECTS_DATA.length} Projects) →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= PHOTO GALLERY HIGHLIGHT SECTION ================= */}
+      <section className="py-20 md:py-28 bg-[#12100e] text-[#F5F2EC] border-t border-[#29241F] relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="space-y-3">
+              <span className="text-xs uppercase font-semibold tracking-[0.25em] text-[#1468a2] block">
+                AUTHENTIC EXECUTION GALLERY
+              </span>
+              <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal leading-tight">
+                Living Architecture & <br />
+                <span className="italic font-serif text-[#1468a2]">Crafted Details.</span>
+              </h2>
+              <p className="text-sm text-[#E8E1D7]/75 font-light max-w-xl">
+                Real, millimeter-precise interior handovers across living salons, bespoke kitchens, devotional mandir sanctums, and designer foyers.
+              </p>
+            </div>
+            <button
+              onClick={() => setActivePage('gallery')}
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.18em] font-semibold text-[#1468a2] hover:text-white transition-colors group"
+            >
+              <span>Explore All {GALLERY_IMAGES.length} Spaces in Gallery</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+
+          {/* 6 Curated Gallery Highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {GALLERY_IMAGES.slice(0, 6).map((item) => (
+              <div
+                key={item.id}
+                onClick={() => setActivePage('gallery')}
+                className="group relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer bg-[#1c1815] border border-white/10 hover:border-[#1468a2] transition-all duration-300 shadow-md hover:shadow-xl"
+              >
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 text-white">
+                  <span className="text-[9px] font-mono tracking-wider text-[#1468a2] uppercase block">
+                    {item.space}
+                  </span>
+                  <p className="text-xs font-serif text-white line-clamp-1 group-hover:text-[#1468a2] transition-colors">
+                    {item.title}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center pt-2">
+            <button
+              onClick={() => setActivePage('gallery')}
+              className="px-8 py-3.5 rounded-full bg-[#1468a2] text-white text-xs uppercase tracking-[0.18em] font-semibold hover:bg-white hover:text-[#181818] transition-all duration-300 shadow-md"
+            >
+              Open Interactive Photo Gallery ({GALLERY_IMAGES.length} Spaces) →
             </button>
           </div>
         </div>

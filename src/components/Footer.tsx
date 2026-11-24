@@ -69,6 +69,12 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) 
                 </button>
               </li>
               <li>
+                <button onClick={() => handleNav('gallery')} className="hover:text-[#1468a2] transition-colors flex items-center space-x-1.5">
+                  <span>Photo Gallery</span>
+                  <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-[#1468a2] text-white font-mono">14</span>
+                </button>
+              </li>
+              <li>
                 <button onClick={() => handleNav('journal')} className="hover:text-[#1468a2] transition-colors">
                   The Journal
                 </button>

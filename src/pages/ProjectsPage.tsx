@@ -15,7 +15,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
-  const categories = ['All', 'Luxury', 'Residential', 'Office', 'Commercial'];
+  const categories = ['All', 'Luxury', 'Residential'];
 
   const filteredProjects = activeCategory === 'All'
     ? PROJECTS_DATA

@@ -132,7 +132,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     keyNeighborhoods: ["Raj Nagar Extension", "Vasundhara", "Indirapuram", "Vaishali", "Kavi Nagar"],
     featuredProjectTypes: ["Luxury Villa Interiors", "Duplex Penthouses", "Custom Modular Kitchens", "Turnkey Renovations"],
     badge: "Studio Location",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85"
+    image: "/projects/living-room-luxury.jpg"
   },
   {
     id: "noida",
@@ -143,7 +143,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     keyNeighborhoods: ["Sector 150", "Sector 128", "Sector 44", "Sector 75", "Sector 104"],
     featuredProjectTypes: ["High-Rise Luxury Apartments", "Ocean-View Style Lounges", "Spa Sanctuary Bathrooms", "Italian Marble Fitouts"],
     badge: "Prime Coverage",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85"
+    image: "/projects/grand-foyer-backlit-mirror.jpg"
   },
   {
     id: "delhi-ncr",
@@ -154,7 +154,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     keyNeighborhoods: ["South Delhi", "Vasant Vihar", "Golf Course Road", "Sainik Farms", "Chhatarpur"],
     featuredProjectTypes: ["Farmhouse Masterplanning", "Commercial Headquarters", "Bespoke Joinery", "Smart Home Engineering"],
     badge: "Capital Coverage",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
+    image: "/projects/dining-room-mirror-wall.jpg"
   },
   {
     id: "greater-noida",
@@ -165,7 +165,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     keyNeighborhoods: ["Jaypee Greens", "Tech Zone", "Knowledge Park", "Delta & Alpha Sectors", "Surajpur"],
     featuredProjectTypes: ["Golf Villa Estates", "Corporate Offices", "Bespoke Furniture", "Turnkey Commercial Retail"],
     badge: "Expanded Footprint",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+    image: "/projects/kitchen-champagne-l-shape.jpg"
   }
 ];
 
@@ -261,7 +261,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Complete residential interiors designed around your lifestyle, personality and aspirations.",
     fullDesc: "Our end-to-end full home interior solution integrates spatial masterplanning, bespoke carpentry, architectural lighting, material curation, and turnkey execution. We transform bare shells into living masterpieces tailored to your everyday rituals.",
     iconName: "Home",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/grand-foyer-backlit-mirror.jpg",
     isFeaturedImage: true,
     category: "Residential",
     deliverables: [
@@ -279,7 +279,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Refined interiors combining sophisticated materials, timeless aesthetics and functional planning.",
     fullDesc: "Curated for discerning clients seeking rare textures, international furniture editions, and architectural harmony. We merge traditional artisanal craftsmanship with ultra-modern luxury standards.",
     iconName: "Sparkles",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/dining-room-mirror-wall.jpg",
     isFeaturedImage: true,
     category: "Residential",
     deliverables: [
@@ -297,7 +297,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Tailored kitchens combining intelligent storage, premium materials and contemporary design.",
     fullDesc: "Culinary spaces where ergonomic precision meets architectural elegance. Featuring soft-closing Blum hardware, Quartz counter surfaces, concealed appliance bays, and island breakfast bars.",
     iconName: "Utensils",
-    image: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/kitchen-champagne-l-shape.jpg",
     isFeaturedImage: true,
     category: "Custom Fitouts",
     deliverables: [
@@ -315,7 +315,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Custom wardrobe solutions designed for elegance, organization and everyday functionality.",
     fullDesc: "Walk-in closets and glass-fronted sliding systems with built-in valet trays, soft sensor lighting, genuine leather inserts, and humidity-controlled watch & jewelry safes.",
     iconName: "Layers",
-    image: "https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/bedroom-wardrobe-study.jpg",
     isFeaturedImage: true,
     category: "Custom Fitouts",
     deliverables: [
@@ -333,7 +333,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Private sanctuary spaces designed for ultimate comfort, calm and personal character.",
     fullDesc: "Sanctuaries crafted with padded acoustic headboards, ambient dimmable lighting scenes, concealed storage wall units, and tactile linen drapery for rest and rejuvenation.",
     iconName: "Bed",
-    image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/master-bedroom-floral.jpg",
     isFeaturedImage: true,
     category: "Residential",
     deliverables: [
@@ -351,7 +351,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Statement living spaces that balance luxury, comfort and architectural harmony.",
     fullDesc: "The centerpiece of your home. We design expansive living lounges with custom media consoles, fireplace features, sculptural seating arrangements, and gallery lighting for fine art.",
     iconName: "Sofa",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/living-room-luxury.jpg",
     isFeaturedImage: true,
     category: "Residential",
     deliverables: [
@@ -363,31 +363,31 @@ export const SERVICES_DATA: Service[] = [
     ]
   },
   {
-    id: "bathroom-design",
+    id: "mandir-pooja-room",
     number: "07",
-    title: "Bathroom Design",
-    shortDesc: "Elegant bathroom interiors with premium finishes and thoughtful spa-like detailing.",
-    fullDesc: "Transforming wet areas into private wellness retreats featuring book-matched marble cladding, rain shower systems, floating vanity units, and integrated anti-fog backlit mirrors.",
-    iconName: "Bath",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=85",
+    title: "Mandir & Pooja Room Design",
+    shortDesc: "Sacred spiritual sanctums combining backlit architectural arches, handcrafted woodwork and divine motifs.",
+    fullDesc: "Creating sacred pooja sanctums tailored to your family's spiritual rituals. Featuring illuminated 3D lotus arches, hand-carved teakwood columns, golden Sanskrit Gayatri Mantra backdrops, floating marble drawer pedestals, and hanging brass temple bells.",
+    iconName: "Sparkles",
+    image: "/projects/mandir-lotus-illuminated.jpg",
     isFeaturedImage: true,
     category: "Bespoke Details",
     deliverables: [
-      "Book-matched Slab Marble & Terrazzo Cladding",
-      "Concealed Thermostatic Shower Valves & Body Jets",
-      "Custom Floating Teak & Quartz Vanities",
-      "Anti-Fog LED Frameless Backlit Mirrors",
-      "Underfloor Heating & Waterproof Niche Lighting"
+      "Backlit 3D Lotus & Gayatri Mantra Acrylic Reliefs",
+      "Hand-Carved Burma Teakwood Pillars & Shikhars",
+      "Floating Marble Decks with Ambient LED Underglow",
+      "Solid Suspended Brass Temple Bells & Jali Work",
+      "Concealed Sacred Storage & Smoke Ventilation Flow"
     ]
   },
   {
     id: "false-ceiling",
     number: "08",
-    title: "False Ceiling",
+    title: "False Ceiling & Lighting",
     shortDesc: "Architectural ceiling solutions that enhance lighting, proportions and atmosphere.",
     fullDesc: "Cove lighting, perimeter shadow gaps, warm wooden rafters, and magnetic track lights engineered to subtly sculpt spatial heights and hide central HVAC ducting seamlessly.",
     iconName: "Grid",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/bedroom-wardrobe-study.jpg",
     isFeaturedImage: true,
     category: "Bespoke Details",
     deliverables: [
@@ -405,7 +405,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Curated wall treatments that add personality, depth and visual sophistication.",
     fullDesc: "Hand-painted silk wallpapers, micro-cement textures, fluted wooden louvers, and bronze mirror paneling that give walls depth, tactile intrigue, and distinct identity.",
     iconName: "Palette",
-    image: "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/fluted-hallway-doorway.jpg",
     isFeaturedImage: true,
     category: "Bespoke Details",
     deliverables: [
@@ -417,31 +417,31 @@ export const SERVICES_DATA: Service[] = [
     ]
   },
   {
-    id: "office-interiors",
+    id: "foyer-entrance-design",
     number: "10",
-    title: "Office Interiors",
-    shortDesc: "Premium workspaces designed for productivity, identity and modern executive business.",
-    fullDesc: "Executive suites, boardrooms, and boutique corporate headquarters engineered to exude leadership, inspire high performance, and embed corporate brand legacy into spatial design.",
-    iconName: "Briefcase",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85",
+    title: "Foyer & Entrance Architecture",
+    shortDesc: "Theatrical entryways featuring designer safety grill doors, circular halo mirrors and custom shoe consoles.",
+    fullDesc: "The entrance sets the tone for your home. We craft memorable arrival experiences with geometric safety doors, illuminated circular halo mirrors, cascading wooden slat feature walls, and floating shoe consoles.",
+    iconName: "Home",
+    image: "/projects/foyer-safety-grill-door.jpg",
     isFeaturedImage: true,
-    category: "Commercial & Office",
+    category: "Custom Fitouts",
     deliverables: [
-      "Executive Suite Master Planning & Furniture",
-      "Soundproofed Boardrooms with Integrated Telepresence",
-      "Ergonomic Task Seating & Motorized Sit-Stand Desks",
-      "Brand Heritage Wall & Trophy Display Joinery",
-      "Acoustic Ceiling & Wall Panel Systems"
+      "Designer Geometric Laser-Cut Security Doors",
+      "Backlit Halo Mirrors & Split-Stone Feature Cladding",
+      "Vertical Fluted Paneling with Cross-Beam Sconces",
+      "Custom Shoe Storage & Integrated Seating Ledges",
+      "Recessed Perimeter Floor Wash Runner Lighting"
     ]
   },
   {
     id: "commercial-interiors",
     number: "11",
-    title: "Commercial Interiors",
+    title: "Commercial & Studio Fitouts",
     shortDesc: "Distinctive commercial environments designed to elevate your brand experience.",
     fullDesc: "High-end retail boutiques, fine dining restaurants, luxury jewelry showrooms, and private club lounges designed to captivate visitors and deliver unforgettable brand encounters.",
     iconName: "Building2",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/kitchen-matte-grey.jpg",
     isFeaturedImage: true,
     category: "Commercial & Office",
     deliverables: [
@@ -459,7 +459,7 @@ export const SERVICES_DATA: Service[] = [
     shortDesc: "Custom furniture, lighting and soft furnishings selected to complete the character of every space.",
     fullDesc: "Custom sofas, dining tables crafted from single-slab solid wood, hand-knotted silk rugs, velvet drapery, and curated accent lighting fixtures sourced from Europe and artisanal master workshops.",
     iconName: "Lamp",
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=85",
+    image: "/projects/dining-room-mirror-wall.jpg",
     isFeaturedImage: true,
     category: "Bespoke Details",
     deliverables: [
@@ -474,72 +474,110 @@ export const SERVICES_DATA: Service[] = [
 
 export const PROJECTS_DATA: Project[] = [
   {
-    id: "raj-nagar-luxury-residence",
-    name: "Raj Nagar Signature Villa",
+    id: "shivangan-signature-residence",
+    name: "Shivangan Signature Residence",
     location: "Raj Nagar Extension, Ghaziabad",
     category: "Luxury",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+    image: "/projects/living-room-luxury.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1400&q=85"
+      "/projects/living-room-luxury.jpg",
+      "/projects/dining-room-mirror-wall.jpg",
+      "/projects/master-bedroom-floral.jpg",
+      "/projects/mandir-lotus-illuminated.jpg",
+      "/projects/kitchen-champagne-l-shape.jpg",
+      "/projects/foyer-shivangan-entry.jpg"
     ],
-    overview: "A sprawling 5,500 sq.ft duplex in Ghaziabad, designed into a serene sanctuary of warm neutrals, Statuario marble floors, and custom fluted oak wall paneling.",
-    concept: "Architectural minimalism meets tactile luxury — balance of floor-to-ceiling glass, muted champagne metallic trim, and hand-embroidered silk wall accents.",
-    materials: ["Italian Statuario Marble", "Smoked European Oak", "Brushed Champagne Brass", "Pure Silk Drapery"],
-    area: "5,500 sq. ft.",
-    clientType: "Private Estate"
+    overview: "A premier turnkey luxury duplex in Raj Nagar Extension crafted with exquisite architectural cohesion. From the custom-fluted entrance foyer to the diamond-beveled mirror dining salon and illuminated lotus mandir, every square inch embodies refined warmth, acoustic balance, and timeless opulence.",
+    concept: "Modern Classical Opulence — harmonizing French boiserie wall mouldings, diamond-beveled mirrors, ambient architectural cove illumination, and rich velvet accents.",
+    materials: [
+      "Diamond-Beveled Mirror Paneling",
+      "Statuary Marble Slab Flooring",
+      "Fluted Acoustic Wall Paneling",
+      "Backlit Lotus Stone Relief",
+      "High-Gloss Champagne Acrylic",
+      "Brushed Gold Fixtures"
+    ],
+    area: "4,800 sq. ft.",
+    clientType: "Private Duplex Residence"
   },
   {
-    id: "aura-manor-villa",
-    name: "Aura Manor Estate",
-    location: "NCR Region",
-    category: "Residential",
+    id: "grand-pavilion-penthouse",
+    name: "The Grand Pavilion Penthouse",
+    location: "Noida Expressway, Sector 150",
+    category: "Luxury",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85",
+    image: "/projects/grand-foyer-backlit-mirror.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1400&q=85",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1400&q=85"
+      "/projects/grand-foyer-backlit-mirror.jpg",
+      "/projects/fluted-hallway-doorway.jpg",
+      "/projects/mandir-krishna-carved-teak.jpg",
+      "/projects/bedroom-wardrobe-study.jpg",
+      "/projects/kitchen-matte-grey.jpg"
     ],
-    overview: "A modern luxury villa designed for relaxed entertaining. Incorporates indoor-outdoor living courts, teak ceilings, and stone wall cladding.",
-    concept: "Organic modernism. Blending natural slate textures, infinity pool reflections, and bespoke low-slung seating.",
-    materials: ["Burma Teak Wood", "Natural Grey Slate Stone", "Micro-Cement Plaster"],
-    area: "7,200 sq. ft.",
+    overview: "An awe-inspiring 5,200 sq.ft high-rise penthouse defined by theatrical transitional spaces. Features an expansive stone-clad grand foyer with perimeter floor wash lighting, continuous fluted hallway transitions, an artisanal hand-carved teakwood temple, and minimalist grey kitchen architecture.",
+    concept: "Tactile Horizon — contrasting raw chiseled stone with warm perimeter floor cove lighting, artisanal teak carvings, and organic curved ceilings.",
+    materials: [
+      "Chiseled Split Stone Cladding",
+      "Perimeter Floor Cove LEDs",
+      "Handcrafted Teakwood Pillars",
+      "Matte Grey Anti-Fingerprint Acrylic",
+      "Tinted Mirror & Halo Lighting"
+    ],
+    area: "5,200 sq. ft.",
+    clientType: "Executive High-Rise"
+  },
+  {
+    id: "aura-urban-contemporary",
+    name: "Aura Urban Contemporary Home",
+    location: "Vasundhara, Ghaziabad",
+    category: "Residential",
+    year: "2024",
+    image: "/projects/foyer-safety-grill-door.jpg",
+    gallery: [
+      "/projects/foyer-safety-grill-door.jpg",
+      "/projects/mandir-gayatri-mantra.jpg",
+      "/projects/kitchen-gloss-white.jpg",
+      "/projects/dining-room-mirror-wall.jpg",
+      "/projects/master-bedroom-floral.jpg"
+    ],
+    overview: "A warm, family-centric modern home blending bespoke security door artistry with serene devotional sanctuaries. Featuring a backlit Gayatri Mantra mandir, an ergonomic white-gloss modular kitchen with integrated appliances, and a welcoming fluted entryway.",
+    concept: "Functional Serenity — pairing clean geometric metalwork and high-gloss reflective surfaces with spiritual warmth and tailored cabinetry.",
+    materials: [
+      "Laser-Cut Geometric Steel",
+      "Backlit Gayatri Mantra Acrylic",
+      "High-Gloss White Shutter Finishes",
+      "Warm Wall Sconces & Backlit Ceiling",
+      "Polished Granite Countertops"
+    ],
+    area: "3,400 sq. ft.",
     clientType: "Family Residence"
   },
   {
-    id: "skyline-pavilion",
-    name: "Skyline Penthouse",
-    location: "Ghaziabad, UP",
+    id: "signature-kitchen-living-suite",
+    name: "Signature Modular Kitchen & Living Suite",
+    location: "GNB Mall Showcase / Delhi NCR",
     category: "Residential",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=85",
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1400&q=85"
-    ],
-    overview: "An ultra-sleek high-rise apartment crafted with monochromatic depth, concealed storage walls, and smart motorized glass dividers.",
-    concept: "Sophisticated minimalism. Utilizing warm ambient backlighting and textured stone finishes.",
-    materials: ["Armani Grey Marble", "Black Anodized Aluminum", "Fluted Glass Panels"],
-    area: "4,200 sq. ft.",
-    clientType: "Private Residence"
-  },
-  {
-    id: "gnb-mall-boutique",
-    name: "Signature Boutique Studio",
-    location: "GNB Mall, Raj Nagar Extn",
-    category: "Commercial",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85",
+    image: "/projects/kitchen-champagne-l-shape.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=85"
+      "/projects/kitchen-champagne-l-shape.jpg",
+      "/projects/kitchen-matte-grey.jpg",
+      "/projects/kitchen-gloss-white.jpg",
+      "/projects/living-room-luxury.jpg",
+      "/projects/bedroom-wardrobe-study.jpg"
     ],
-    overview: "Our flagship interior studio showcase located at GNB Mall, featuring bespoke joinery, travertine display pedestals, and concealed lighting niches.",
-    concept: "Sculptural drama — focused on soft curves, neutral tactile plaster, and museum-grade color rendering indices.",
-    materials: ["Navona Travertine", "Venetian Micro-Plaster", "Muted Gold Trim"],
-    area: "2,800 sq. ft.",
-    clientType: "Commercial Showcase"
+    overview: "A comprehensive masterclass in custom cabinetry, ergonomic kitchen engineering, and integrated living solutions. Showcases three distinct kitchen typologies — champagne gloss, matte grey with warm display niches, and high-gloss white — paired with designer living consoles.",
+    concept: "Ergonomic Illumination — integrating German Blum hardware, concealed profile lighting, anti-fingerprint surfaces, and seamless marble backsplashes.",
+    materials: [
+      "Champagne & Matte Acrylic",
+      "Seamless Veined Marble Slabs",
+      "Warm Recessed LED Profiles",
+      "German Soft-Close Hardware",
+      "Fluted Oak Accents"
+    ],
+    area: "3,800 sq. ft.",
+    clientType: "Turnkey Fitout Showcase"
   }
 ];
 
@@ -548,31 +586,31 @@ export const PROCESS_STEPS = [
     number: "01",
     title: "Consultation",
     desc: "Understanding your lifestyle, architectural requirements, spatial aspirations, and vision through an intimate design dialogue.",
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=85"
+    image: "/projects/foyer-shivangan-entry.jpg"
   },
   {
     number: "02",
     title: "Concept",
     desc: "Developing the overarching design direction, moodboards, material palettes, spatial flow diagrams, and preliminary 3D concepts.",
-    image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=85"
+    image: "/projects/bedroom-wardrobe-study.jpg"
   },
   {
     number: "03",
     title: "Design Development",
     desc: "Photorealistic rendering, millimeter-precise architectural drawings, custom furniture design, and material sample approvals.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=85"
+    image: "/projects/kitchen-matte-grey.jpg"
   },
   {
     number: "04",
     title: "Execution",
     desc: "Coordinating master craftsmen, turnkey structural modifications, on-site quality audits, and seamless project management.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=85"
+    image: "/projects/fluted-hallway-doorway.jpg"
   },
   {
     number: "05",
     title: "Final Reveal",
     desc: "White-glove styling, soft furnishing placement, deep cleaning, and handing over a finished space that feels distinctly and unmistakably yours.",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85"
+    image: "/projects/living-room-luxury.jpg"
   }
 ];
 
@@ -643,7 +681,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "September 14, 2026",
     readTime: "5 min read",
     author: "Jain Signature Editorial",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
+    image: "/projects/dining-room-mirror-wall.jpg",
     excerpt: "Exploring the fundamental rules of spatial proportions, natural light, and authentic materials that ensure a home remains elegant for decades.",
     content: [
       "Trends come and go with seasonal cycles, but true luxury in interior architecture lies in permanence. A timeless interior does not shout for attention; it commands respect through calm balance, high-grade natural materials, and flawless spatial proportions.",
@@ -658,7 +696,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "August 28, 2026",
     readTime: "6 min read",
     author: "Senior Material Curator",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85",
+    image: "/projects/living-room-luxury.jpg",
     excerpt: "A deep dive into vein-matching Italian Statuario marble, selecting aged brass accents, and harmonizing smoked European oak in luxury residences.",
     content: [
       "Materials carry emotional resonance. The cold, smooth tactile touch of book-matched Statuario marble paired against the organic warmth of wire-brushed European oak creates a harmonious sensory contrast.",
@@ -672,7 +710,7 @@ export const ARTICLES_DATA: Article[] = [
     date: "August 10, 2026",
     readTime: "4 min read",
     author: "Jain Signature Studio",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85",
+    image: "/projects/grand-foyer-backlit-mirror.jpg",
     excerpt: "True luxury is quiet. Discover how generous whitespace, concealed storage, and restrained geometry elevate high-end living spaces.",
     content: [
       "Excessive ornamentation often masks poor spatial planning. Modern architectural luxury prioritizes negative space — allowing architectural forms, statement furniture, and curated artwork room to breathe.",
@@ -681,11 +719,156 @@ export const ARTICLES_DATA: Article[] = [
   }
 ];
 
-export const GALLERY_IMAGES = [
-  { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=85", title: "Italian Marble Living Room" },
-  { url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85", title: "Minimalist Master Suite" },
-  { url: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=85", title: "Custom Quartz Island Kitchen" },
-  { url: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=85", title: "Fluted Wood Lounge Wall" },
-  { url: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85", title: "Penthouse Terrace Garden" },
-  { url: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=85", title: "Bespoke Travertine Vanity" }
+export interface GalleryItem {
+  id: string;
+  url: string;
+  title: string;
+  category: 'Living & Dining' | 'Modular Kitchens' | 'Bedrooms & Wardrobes' | 'Mandir & Pooja Units' | 'Foyers & Entrances';
+  space: string;
+  description: string;
+  highlight: string;
+  aspect?: 'portrait' | 'landscape' | 'square';
+}
+
+export const GALLERY_IMAGES: GalleryItem[] = [
+  {
+    id: "living-room-luxury",
+    url: "/gallery/living-room-luxury.jpg",
+    title: "Grand Living Lounge & Fluted TV Console",
+    category: "Living & Dining",
+    space: "Living Room",
+    description: "Multi-tiered crystal chandelier, vertical fluted wood accent wall with floating marble media ledge, plush velvet sofa, and classic wall boiserie mouldings.",
+    highlight: "Acoustic Fluting & Crystal Chandelier",
+    aspect: "portrait"
+  },
+  {
+    id: "dining-room-mirror-wall",
+    url: "/gallery/dining-room-mirror-wall.jpg",
+    title: "Diamond-Beveled Mirror Dining Salon",
+    category: "Living & Dining",
+    space: "Dining Room",
+    description: "Floor-to-ceiling diamond-beveled mirror wall flanked by walnut fluted pilasters, crystal drum chandelier, and gold-base marble dining setting.",
+    highlight: "Diamond-Beveled Mirror Paneling",
+    aspect: "portrait"
+  },
+  {
+    id: "master-bedroom-floral",
+    url: "/gallery/master-bedroom-floral.jpg",
+    title: "Master Suite with Cherry Blossom Art & Boiserie",
+    category: "Bedrooms & Wardrobes",
+    space: "Master Suite",
+    description: "European boiserie mouldings framing a scenic cherry blossom mural, channel-tufted vertical fluted headboard, and bespoke brass wall sconces.",
+    highlight: "Botanical Mural & French Mouldings",
+    aspect: "portrait"
+  },
+  {
+    id: "bedroom-wardrobe-study",
+    url: "/gallery/bedroom-wardrobe-study.jpg",
+    title: "Curved Ceiling Bedroom with Wardrobe & Study",
+    category: "Bedrooms & Wardrobes",
+    space: "Contemporary Bedroom",
+    description: "Sculpted curved cove ceiling with 3000K ambient glow, misty forest mural, and floor-to-ceiling wardrobe with integrated dressing mirror & cantilever study desk.",
+    highlight: "Curved Cove Ceiling & Integrated Joinery",
+    aspect: "portrait"
+  },
+  {
+    id: "kitchen-champagne-l-shape",
+    url: "/gallery/kitchen-champagne-l-shape.jpg",
+    title: "L-Shaped Champagne Gloss Modular Kitchen",
+    category: "Modular Kitchens",
+    space: "Modular Kitchen",
+    description: "Reflective champagne-finish acrylic cabinetry, recessed LED profile upper lighting, floor kickboard wash illumination, and seamless marble cladding.",
+    highlight: "Champagne Acrylic & Dual Profile Lighting",
+    aspect: "portrait"
+  },
+  {
+    id: "kitchen-matte-grey",
+    url: "/gallery/kitchen-matte-grey.jpg",
+    title: "Minimalist Matte Grey Kitchen with Lit Niches",
+    category: "Modular Kitchens",
+    space: "Modular Kitchen",
+    description: "Anti-fingerprint matte grey cabinetry, warm open-wood illuminated display cubbies, seamless slab marble backsplash, and modern integrated appliances.",
+    highlight: "Warm Illuminated Display Niches",
+    aspect: "portrait"
+  },
+  {
+    id: "kitchen-gloss-white",
+    url: "/gallery/kitchen-gloss-white.jpg",
+    title: "High-Gloss White Modular Kitchen with Built-Ins",
+    category: "Modular Kitchens",
+    space: "Modular Kitchen",
+    description: "Streamlined high-gloss white cabinetry featuring continuous warm under-cabinet strip LEDs, black granite counters, and integrated appliance tall units.",
+    highlight: "Built-In Appliance Integration",
+    aspect: "portrait"
+  },
+  {
+    id: "mandir-lotus-illuminated",
+    url: "/gallery/mandir-lotus-illuminated.jpg",
+    title: "Sacred Lotus Sanctum with Om & Brass Bells",
+    category: "Mandir & Pooja Units",
+    space: "Pooja Room",
+    description: "Backlit architectural archway framing 3D hand-painted lotus blossoms, sacred Om emblem, suspended solid brass temple bells, and illuminated floating marble drawers.",
+    highlight: "Backlit Lotus Relief & Brass Temple Bells",
+    aspect: "portrait"
+  },
+  {
+    id: "mandir-krishna-carved-teak",
+    url: "/gallery/mandir-krishna-carved-teak.jpg",
+    title: "Heritage Hand-Carved Teakwood Krishna Mandir",
+    category: "Mandir & Pooja Units",
+    space: "Pooja Room",
+    description: "Intricately carved Burma teak pillars and ornamental archway framing a white marble relief of Lord Krishna and Kamdhenu cow with warm vertical lighting niches.",
+    highlight: "Hand-Carved Teakwood Pillars & Krishna Cow Relief",
+    aspect: "portrait"
+  },
+  {
+    id: "mandir-gayatri-mantra",
+    url: "/gallery/mandir-gayatri-mantra.jpg",
+    title: "Devotional Golden Gayatri Mantra Mandir",
+    category: "Mandir & Pooja Units",
+    space: "Pooja Room",
+    description: "Illuminated golden arched panel featuring the sacred Gayatri Mantra and Kamdhenu cow, paired with a traditional carved wooden shikhar temple, white drawers, and glass display tower.",
+    highlight: "Illuminated Gayatri Mantra Sanskrit Backdrop",
+    aspect: "portrait"
+  },
+  {
+    id: "grand-foyer-backlit-mirror",
+    url: "/gallery/grand-foyer-backlit-mirror.jpg",
+    title: "Grand Hallway with Backlit Halo Mirror & Floor Wash",
+    category: "Foyers & Entrances",
+    space: "Entrance Foyer",
+    description: "Dramatic long entryway featuring a circular backlit halo mirror, natural textured split-stone wall, floating timber console with greenery, continuous perimeter floor cove LEDs, and custom designer entrance door.",
+    highlight: "Circular Halo Mirror & Floor Perimeter Wash",
+    aspect: "portrait"
+  },
+  {
+    id: "fluted-hallway-doorway",
+    url: "/gallery/fluted-hallway-doorway.jpg",
+    title: "Fluted Wood Accent Wall with Concealed Edge Lighting",
+    category: "Foyers & Entrances",
+    space: "Transitional Hallway",
+    description: "Floor-to-ceiling vertical fluted wall paneling highlighted by concealed warm edge lighting, paired with a modern dark wood flush door featuring a full-height glass insert and matte black pull handle.",
+    highlight: "Continuous Vertical Fluting & Edge Glow",
+    aspect: "portrait"
+  },
+  {
+    id: "foyer-shivangan-entry",
+    url: "/gallery/foyer-shivangan-entry.jpg",
+    title: "Custom Jali Entry Door & Fluted Foyer Console",
+    category: "Foyers & Entrances",
+    space: "Entrance Foyer",
+    description: "Turnkey residence entrance ('Shivangan') featuring an intricate geometric jali door, vertical wood slats with cascading white accents, pendant chandelier, and modular shoe console with seating bench.",
+    highlight: "Custom Jali Cut Door & Cascading Slat Accents",
+    aspect: "portrait"
+  },
+  {
+    id: "foyer-safety-grill-door",
+    url: "/gallery/foyer-safety-grill-door.jpg",
+    title: "Designer Geometric Safety Door & Foyer Sconces",
+    category: "Foyers & Entrances",
+    space: "Main Entrance",
+    description: "High-security designer metal grill door with modern oval motif, fluted wood wall with dual-beam accent sconces, backlit lattice ceiling, and integrated shoe storage cabinet.",
+    highlight: "Designer Metal Grill & Backlit Ceiling Lattice",
+    aspect: "portrait"
+  }
 ];

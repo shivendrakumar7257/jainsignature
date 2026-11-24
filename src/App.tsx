@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { JournalPage } from './pages/JournalPage';
 import { ContactPage } from './pages/ContactPage';
 
@@ -61,6 +62,12 @@ export function App() {
         return (
           <ProjectsPage
             onSelectProject={setSelectedProject}
+            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
+          />
+        );
+      case 'gallery':
+        return (
+          <GalleryPage
             onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
           />
         );
