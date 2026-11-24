@@ -9,7 +9,7 @@ export const ContactPage: React.FC = () => {
     phone: '',
     city: 'Ghaziabad',
     projectType: 'Full Home Interiors',
-    budget: '₹50 Lakhs – ₹1 Crore',
+    budget: '₹25 Lakhs – ₹35 Lakhs',
     message: ''
   });
 
@@ -22,7 +22,7 @@ export const ContactPage: React.FC = () => {
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent(
-      `Hello Jain Signature Studio,\n\nI would like to start a project.\nName: ${formData.name}\nCity: ${formData.city}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nPhone: ${formData.phone}`
+      `Hello Jain Signature Studio LLP,\n\nI would like to start a project.\nName: ${formData.name}\nCity: ${formData.city}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nPhone: ${formData.phone}`
     );
     window.open(`https://api.whatsapp.com/send/?phone=${BRAND_INFO.rawPhone}&text=${text}&type=phone_number&app_absent=0`, '_blank');
   };
@@ -174,10 +174,15 @@ export const ContactPage: React.FC = () => {
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
                     >
-                      <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
-                      <option value="₹50 Lakhs – ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
-                      <option value="₹1 Crore – ₹3 Crores">₹1 Crore – ₹3 Crores</option>
-                      <option value="₹3 Crores+">₹3 Crores+ (Ultra Luxury / Estate)</option>
+                      <option value="₹25 Lakhs – ₹35 Lakhs">₹25 Lakhs – ₹35 Lakhs</option>
+                      <option value="₹35 Lakhs – ₹45 Lakhs">₹35 Lakhs – ₹45 Lakhs</option>
+                      <option value="₹45 Lakhs – ₹55 Lakhs">₹45 Lakhs – ₹55 Lakhs</option>
+                      <option value="₹55 Lakhs – ₹65 Lakhs">₹55 Lakhs – ₹65 Lakhs</option>
+                      <option value="₹65 Lakhs – ₹75 Lakhs">₹65 Lakhs – ₹75 Lakhs</option>
+                      <option value="₹75 Lakhs – ₹85 Lakhs">₹75 Lakhs – ₹85 Lakhs</option>
+                      <option value="₹85 Lakhs – ₹95 Lakhs">₹85 Lakhs – ₹95 Lakhs</option>
+                      <option value="₹95 Lakhs – ₹1 Crore">₹95 Lakhs – ₹1 Crore</option>
+                      <option value="₹1 Crore+">₹1 Crore+ (Ultra Luxury / Estate)</option>
                     </select>
                   </div>
                 </div>
@@ -263,7 +268,7 @@ export const ContactPage: React.FC = () => {
           <div className="pt-4 border-t border-[#38322B] space-y-3.5">
             <div className="rounded-2xl overflow-hidden h-36 relative group border border-[#38322B]">
               <iframe
-                title="Jain Signature Studio Map Location"
+                title="Jain Signature Studio LLP Map Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.7891789!2d77.43!3d28.69!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDQxJzI0LjAiTiA3N8KwMjUnNDguMCJF!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
                 className="w-full h-full border-0 grayscale invert opacity-75 group-hover:opacity-90 group-hover:grayscale-0 transition-all duration-500 pointer-events-none"
                 loading="lazy"

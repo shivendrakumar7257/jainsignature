@@ -43,7 +43,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
 
           {/* Center Brand Tag */}
           <span className="hidden sm:block text-xs font-mono uppercase tracking-[0.25em] text-[#1468a2] font-semibold">
-            JAIN SIGNATURE EDITORIAL
+            JAIN SIGNATURE STUDIO LLP EDITORIAL
           </span>
 
           {/* Right Action */}
@@ -138,7 +138,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 Inspired by this architectural perspective?
               </h3>
               <p className="text-base text-[#181818] font-normal leading-relaxed">
-                Connect with our principal design team at Jain Signature Studio to compose your living sanctuary.
+                Connect with our principal design team at Jain Signature Studio LLP to compose your living sanctuary.
               </p>
             </div>
 

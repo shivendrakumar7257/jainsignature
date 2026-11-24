@@ -5,10 +5,10 @@ import { BRAND_INFO } from '../data/studioData';
 interface NavbarProps {
   activePage: string;
   setActivePage: (page: string) => void;
-  onOpenInquiry: (serviceTitle?: string) => void;
+  onOpenInquiry?: (serviceTitle?: string) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpenInquiry }) => {
+export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -108,11 +108,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
             <button
               onClick={() => handleNavClick('home')}
               className="flex items-center group focus:outline-none text-left shrink-0"
-              aria-label="Jain Signature Studio Home"
+              aria-label="Jain Signature Studio LLP Home"
             >
               <img
                 src={BRAND_INFO.logoUrl}
-                alt="Jain Signature Studio"
+                alt="Jain Signature Studio LLP"
                 className="h-8.5 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </button>
@@ -140,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
             {/* Desktop CTA Button */}
             <div className="hidden lg:flex items-center">
               <button
-                onClick={() => onOpenInquiry('Book a Free Consultation')}
+                onClick={() => handleNavClick('contact')}
                 className="text-xs uppercase tracking-[0.16em] px-6 py-2.5 rounded-full border border-[#1468a2] bg-[#1468a2] text-white font-semibold transition-all duration-300 flex items-center space-x-2 group hover:bg-[#181818] hover:border-[#181818] shadow-sm hover:shadow-md"
               >
                 <span>Book Free Consultation</span>
@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
           <div className="flex items-center justify-between pt-2">
             <img
               src={BRAND_INFO.logoUrl}
-              alt="Jain Signature Studio"
+              alt="Jain Signature Studio LLP"
               className="h-8 w-auto brightness-200"
             />
             <button
@@ -200,10 +200,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
           {/* Mobile Menu Footer: CTA, Direct Contact & Social Buttons */}
           <div className="space-y-2.5 pt-5 border-t border-white/10">
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenInquiry('Book a Free Consultation');
-              }}
+              onClick={() => handleNavClick('contact')}
               className="w-full py-3 rounded-full bg-[#1468a2] text-white font-medium uppercase tracking-[0.14em] text-xs flex items-center justify-center space-x-2 shadow-lg hover:bg-[#0f4e7a] transition-colors"
             >
               <span>Book Free Consultation</span>
@@ -211,10 +208,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage, onOpe
             </button>
 
             <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenInquiry('Get a Project Estimate');
-              }}
+              onClick={() => handleNavClick('contact')}
               className="w-full py-2.5 rounded-full border border-white/30 text-white font-medium uppercase tracking-[0.14em] text-xs flex items-center justify-center space-x-2 hover:bg-white/10 transition-colors"
             >
               <span>Get a Project Estimate</span>

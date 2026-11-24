@@ -14,7 +14,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
       <section className="max-w-7xl mx-auto px-6 md:px-12 pt-8">
         <div className="space-y-6 max-w-full">
           <span className="text-xs uppercase font-semibold tracking-[0.3em] text-[#1468a2] block">
-            ABOUT JAIN SIGNATURE
+            ABOUT JAIN SIGNATURE STUDIO LLP
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl text-[#181818] font-normal leading-[1.08] sm:whitespace-nowrap">
             Designing Spaces <span className="italic font-serif text-[#1468a2]">With Character.</span>
@@ -28,7 +28,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
         <div className="mt-12 rounded-3xl overflow-hidden h-[380px] md:h-[550px] w-full relative border border-[#E2DACD]">
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
-            alt="Jain Signature Studio Overview"
+            alt="Jain Signature Studio LLP Overview"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -101,7 +101,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
             title="Our Story"
           />
           <p className="text-base md:text-lg text-[#181818] font-normal leading-relaxed">
-            Jain Signature was established over a decade ago with a singular objective: to redefine Indian luxury interior architecture through international minimalism and uncompromising local craftsmanship.
+            Jain Signature Studio LLP was established over a decade ago with a singular objective: to redefine Indian luxury interior architecture through international minimalism and uncompromising local craftsmanship.
           </p>
           <p className="text-base md:text-lg text-[#181818] font-normal leading-relaxed">
             What started as a boutique design laboratory catering to high-net-worth families has expanded into an acclaimed multidisciplinary studio managing private estates, luxury penthouses, boutique hospitality, and corporate headquarters across India.
@@ -160,7 +160,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenInquiry }) => {
         <SectionHeading
           label="LEADERSHIP & CRAFTSMANSHIP"
           title="Meet Our Team"
-          subtitle="The visionary architects, interior designers, and master planners behind Jain Signature."
+          subtitle="The visionary architects, interior designers, and master planners behind Jain Signature Studio LLP."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">

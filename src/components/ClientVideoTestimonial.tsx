@@ -15,7 +15,7 @@ export const VIDEO_TESTIMONIALS: VideoTestimonialItem[] = [
     id: 'client-review',
     videoUrl: '/testimonials/client-review.mp4',
     badge: 'Client Review',
-    clientName: 'Mr. R. K. Jain & Family',
+    clientName: "Mr.Omesh Chaudhary & family",
     subtitle: 'Raj Nagar Extension, Ghaziabad',
     rating: 5
   },

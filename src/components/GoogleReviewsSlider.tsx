@@ -24,7 +24,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
     date: '2 weeks ago',
     location: 'Raj Nagar Extn, Ghaziabad',
     projectType: 'Full Home Interior',
-    reviewText: 'Jain Signature Studio transformed our 4BHK apartment into a dream home. Their team is extremely professional, transparent with pricing, and completed execution right on schedule. The 3D renderings matched reality 100%!',
+    reviewText: 'Jain Signature Studio LLP transformed our 4BHK apartment into a dream home. Their team is extremely professional, transparent with pricing, and completed execution right on schedule. The 3D renderings matched reality 100%!',
     verified: true
   },
   {
@@ -36,7 +36,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
     date: '1 month ago',
     location: 'Sector 150, Noida',
     projectType: 'Luxury Apartment',
-    reviewText: 'Outstanding experience with Jain Signature Studio LLP. From initial consultation to final reveal, Mr. Jain and his architects paid immense attention to detail. The Statuario marble work and modular kitchen are top notch.',
+    reviewText: 'Outstanding experience with Jain Signature Studio LLP. From initial consultation to final reveal, the team and architects at Jain Signature Studio LLP paid immense attention to detail. The Statuario marble work and modular kitchen are top notch.',
     verified: true
   },
   {
@@ -48,7 +48,7 @@ export const GOOGLE_REVIEWS_DATA: GoogleReview[] = [
     date: '2 months ago',
     location: 'Jaypee Greens, Greater Noida',
     projectType: 'Golf Villa Estate',
-    reviewText: 'We hired Jain Signature Studio for our villa interior design in Greater Noida. Their material quality (BWP ply, Blum hardware, custom veneers) and multi-tier quality checks are exceptional. Zero budget overruns!',
+    reviewText: 'We hired Jain Signature Studio LLP for our villa interior design in Greater Noida. Their material quality (BWP ply, Blum hardware, custom veneers) and multi-tier quality checks are exceptional. Zero budget overruns!',
     verified: true
   },
   {

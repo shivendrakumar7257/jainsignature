@@ -23,15 +23,14 @@ interface HomePageProps {
   onSelectService: (service: Service) => void;
   onSelectProject: (project: Project) => void;
   onSelectArticle: (article: Article) => void;
-  onOpenInquiry: (serviceTitle?: string) => void;
+  onOpenInquiry?: (serviceTitle?: string) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   setActivePage,
   onSelectService,
   onSelectProject,
-  onSelectArticle,
-  onOpenInquiry
+  onSelectArticle
 }) => {
   const [activeServiceCategory, setActiveServiceCategory] = useState<string>('All');
   const [activeProjectCategory, setActiveProjectCategory] = useState<string>('All');
@@ -148,7 +147,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Hero CTAs */}
               <div className="pt-2 flex flex-col space-y-2.5">
                 <button
-                  onClick={() => onOpenInquiry('Get a Project Estimate')}
+                  onClick={() => setActivePage('contact')}
                   className="w-full px-5 py-3 rounded-full bg-[#181818] text-white font-semibold text-xs uppercase tracking-[0.16em] hover:bg-[#1468a2] transition-colors flex items-center justify-center space-x-2 shadow-md group"
                 >
                   <span className="whitespace-nowrap">Get a Project Estimate</span>
@@ -156,14 +155,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </button>
 
                 <button
-                  onClick={() => {
-                    const el = document.getElementById('selected-work');
-                    if (el) {
-                      el.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                      setActivePage('projects');
-                    }
-                  }}
+                  onClick={() => setActivePage('projects')}
                   className="w-full px-5 py-3 rounded-full border border-[#181818] bg-transparent text-[#181818] font-semibold text-xs uppercase tracking-[0.16em] hover:bg-[#FAF8F5] transition-colors flex items-center justify-center"
                 >
                   <span className="whitespace-nowrap">Explore Our Projects</span>
@@ -252,14 +244,14 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="rounded-3xl overflow-hidden h-[340px] sm:h-[420px] w-full border border-[#E2DACD] shadow-lg relative group">
                 <img
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                  alt="Jain Signature Architectural Interior"
+                  alt="Jain Signature Studio LLP Architectural Interior"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-6 right-6 text-white flex justify-between items-center text-xs font-medium">
                   <span className="tracking-wider uppercase font-sans">Bespoke Architectural Spaces</span>
-                  <span className="text-[#FAF8F5]/80 font-serif italic">Jain Signature Studio</span>
+                  <span className="text-[#FAF8F5]/80 font-serif italic">Jain Signature Studio LLP</span>
                 </div>
               </div>
             </div>
@@ -267,7 +259,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Right Column: Story & Narrative Aligned with Image */}
             <div className="lg:col-span-6 space-y-6 flex flex-col justify-center">
               <p className="text-lg md:text-xl text-[#181818] font-normal leading-relaxed">
-                Jain Signature is an acclaimed luxury interior design & architecture studio based in Ghaziabad, UP. Founded over a decade ago, we specialize in high-end residential estates, luxury penthouses, modular fitouts, and commercial environments across India.
+                Jain Signature Studio LLP is an acclaimed luxury interior design & architecture studio based in Ghaziabad, UP. Founded over a decade ago, we specialize in high-end residential estates, luxury penthouses, modular fitouts, and commercial environments across India.
               </p>
               <p className="text-base md:text-lg text-[#181818] font-normal leading-relaxed">
                 Our practice harmonizes emotional serenity, material authenticity, and architectural precision. From civil masterplanning to white-glove styling, we compose spaces that remain timeless across generations.
@@ -557,7 +549,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="pt-4 flex items-center justify-between border-t border-[#E2DACD]/40">
                   <button
-                    onClick={() => onOpenInquiry(`Inquiry about ${item.category}`)}
+                    onClick={() => setActivePage('contact')}
                     className="text-xs uppercase font-bold tracking-wider text-[#1468a2] group-hover:text-[#181818] transition-colors flex items-center space-x-1"
                   >
                     <span>Discuss {item.category}</span>
@@ -577,13 +569,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                   Experience Uncompromised Peace of Mind
                 </h3>
                 <p className="text-sm text-white/85 leading-relaxed font-normal">
-                  Every project at Jain Signature Studio is backed by our strict commitment to zero delay, transparent budgets, and white-glove aftercare.
+                  Every project at Jain Signature Studio LLP is backed by our strict commitment to zero delay, transparent budgets, and white-glove aftercare.
                 </p>
               </div>
 
               <div className="space-y-3 pt-4 border-t border-white/10">
                 <button
-                  onClick={() => onOpenInquiry('Consultation & Pain Point Review')}
+                  onClick={() => setActivePage('contact')}
                   className="w-full py-3.5 rounded-full bg-[#1468a2] text-white text-xs font-semibold uppercase tracking-wider hover:bg-white hover:text-[#181818] transition-colors flex items-center justify-center space-x-2 shadow-md"
                 >
                   <span>Book Free Consultation</span>
@@ -648,7 +640,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* ================= WHY JAIN SIGNATURE / BRAND LEGACY (WHITE BACKGROUND) ================= */}
+      {/* ================= WHY JAIN SIGNATURE STUDIO LLP / BRAND LEGACY (WHITE BACKGROUND) ================= */}
       <section className="py-24 md:py-32 bg-white border-b border-[#E2DACD]/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
@@ -753,7 +745,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                   <div className="pt-4 border-t border-[#E2DACD] flex items-center justify-between">
                     <button
-                      onClick={() => onOpenInquiry(`Consultation for ${loc.city}`)}
+                      onClick={() => setActivePage('contact')}
                       className="text-xs uppercase font-bold tracking-wider text-[#1468a2] hover:text-[#181818] transition-colors flex items-center space-x-1"
                     >
                       <span>Book {loc.city} Consultation</span>

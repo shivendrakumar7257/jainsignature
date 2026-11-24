@@ -210,7 +210,7 @@ export const VideoReelsSection: React.FC = () => {
                 {/* Bottom External Instagram Action */}
                 <div className="p-3 bg-[#181818] border-t border-[#2d2824] flex items-center justify-between text-xs text-white/70">
                   <span className="text-[10px] uppercase font-mono tracking-wider text-[#1468a2]">
-                    Jain Signature Reels
+                    Jain Signature Studio LLP Reels
                   </span>
                   <a
                     href={BRAND_INFO.instagramLink}

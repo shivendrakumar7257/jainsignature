@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
@@ -20,6 +20,11 @@ import type { Service, Project, Article } from './data/studioData';
 
 export function App() {
   const [activePage, setActivePage] = useState<string>('home');
+
+  // Scroll to top whenever activePage changes so separate pages never open at the bottom/footer
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [activePage]);
 
   // Modals state
   const [selectedService, setSelectedService] = useState<Service | null>(null);
@@ -48,27 +53,27 @@ export function App() {
       case 'about':
         return (
           <AboutPage
-            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
+            onOpenInquiry={() => setActivePage('contact')}
           />
         );
       case 'services':
         return (
           <ServicesPage
             onSelectService={setSelectedService}
-            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
+            onOpenInquiry={() => setActivePage('contact')}
           />
         );
       case 'projects':
         return (
           <ProjectsPage
             onSelectProject={setSelectedProject}
-            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
+            onOpenInquiry={() => setActivePage('contact')}
           />
         );
       case 'gallery':
         return (
           <GalleryPage
-            onOpenInquiry={(serviceTitle?: string) => handleOpenInquiry(serviceTitle)}
+            onOpenInquiry={() => setActivePage('contact')}
           />
         );
       case 'journal':

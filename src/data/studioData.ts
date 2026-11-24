@@ -77,23 +77,23 @@ export const TEAM_MEMBERS: TeamMember[] = [
 ];
 
 export const BRAND_INFO = {
-  name: "JAIN SIGNATURE",
+  name: "Jain Signature Studio LLP",
   tagline: "Signature Spaces. Timeless Living.",
   alternateHeadline: "Where Luxury Becomes Personal.",
   subtitle: "Bespoke interiors crafted with architectural precision, timeless aesthetics and an uncompromising attention to detail.",
   introHeadline: "Designed for the way you live.",
-  introText: "At Jain Signature, we believe exceptional interiors are not simply designed — they are thoughtfully composed. From the first sketch to the final detail, we create spaces that reflect individuality, functionality and timeless luxury.",
+  introText: "At Jain Signature Studio LLP, we believe exceptional interiors are not simply designed — they are thoughtfully composed. From the first sketch to the final detail, we create spaces that reflect individuality, functionality and timeless luxury.",
   phone: "+91 9643431551",
   rawPhone: "919643431551",
   whatsapp: "919643431551",
   whatsappLink: "https://api.whatsapp.com/send/?phone=919643431551&text&type=phone_number&app_absent=0",
   email: "info@jainstudio.co.in",
   inquiryEmail: "info@jainstudio.co.in",
-  address: "L-08, GNB Mall Raj Nagar Extn, Ghaziabad 201017 (UP)",
+  address: "LG-08 GNB Mall Raj Nagar Extn, Ghaziabad 201017 (UP)",
   mapLink: "https://maps.app.goo.gl/tnPgX2LfF1T8Q9LGA",
   hours: "Monday – Saturday: 10:00 AM – 7:00 PM (By Appointment Only)",
-  instagram: "@jainsignaturestudio",
-  instagramLink: "https://www.instagram.com/jainsignaturestudio?igsh=Y2prN2VwejhjNW5s",
+  instagram: "@jainsignaturestudiollp",
+  instagramLink: "https://www.instagram.com/jainsignaturestudiollp/",
   facebookLink: "https://www.facebook.com/people/Jain-Signature-Studio-LLP/61586381695060/?rdid=CnYhpifvQIhlfMY1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AoK1swyGt%2F",
   logoUrl: "/logo.svg",
   serviceAreas: [
@@ -104,8 +104,8 @@ export const BRAND_INFO = {
   ],
   stats: [
     { value: "10+", label: "Years of Experience" },
-    { value: "150+", label: "Completed Projects" },
-    { value: "50+", label: "Discreet High-Net-Worth Clients" },
+    { value: "250+", label: "Completed Projects" },
+    { value: "150+", label: "Discreet High-Net-Worth Clients" },
     { value: "12", label: "Design & Architectural Awards" }
   ]
 };
@@ -128,7 +128,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     city: "Ghaziabad",
     seoHeading: "Award-Winning Interior Designer in Ghaziabad",
     subhead: "Flagship Studio & Turnkey Residential Execution",
-    description: "Headquartered at GNB Mall, Raj Nagar Extension, Jain Signature Studio is an award-winning interior designer in Ghaziabad. We craft bespoke luxury residences, penthouses, and executive villas across Ghaziabad's premier enclaves.",
+    description: "Headquartered at GNB Mall, Raj Nagar Extension, Jain Signature Studio LLP is an award-winning interior designer in Ghaziabad. We craft bespoke luxury residences, penthouses, and executive villas across Ghaziabad's premier enclaves.",
     keyNeighborhoods: ["Raj Nagar Extension", "Vasundhara", "Indirapuram", "Vaishali", "Kavi Nagar"],
     featuredProjectTypes: ["Luxury Villa Interiors", "Duplex Penthouses", "Custom Modular Kitchens", "Turnkey Renovations"],
     badge: "Studio Location",
@@ -150,7 +150,7 @@ export const SERVICE_LOCATIONS: ServiceLocation[] = [
     city: "Delhi NCR",
     seoHeading: "Best Interior Design Company in Delhi NCR",
     subhead: "Region-Wide Turnkey Architectural Mastery",
-    description: "Renowned as the best interior design company in Delhi NCR, Jain Signature Studio brings comprehensive turnkey masterplanning to sprawling farmhouses, heritage bungalows, and ultra-modern executive spaces across South Delhi and the National Capital Region.",
+    description: "Renowned as the best interior design company in Delhi NCR, Jain Signature Studio LLP brings comprehensive turnkey masterplanning to sprawling farmhouses, heritage bungalows, and ultra-modern executive spaces across South Delhi and the National Capital Region.",
     keyNeighborhoods: ["South Delhi", "Vasant Vihar", "Golf Course Road", "Sainik Farms", "Chhatarpur"],
     featuredProjectTypes: ["Farmhouse Masterplanning", "Commercial Headquarters", "Bespoke Joinery", "Smart Home Engineering"],
     badge: "Capital Coverage",
@@ -640,8 +640,8 @@ export const CORE_PRINCIPLES = [
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "video-review",
-    quote: "Jain Signature Studio transformed our residence with millimeter precision. Their dedication to material perfection, Italian marble detailing, and seamless turnkey execution made the journey completely stress-free.",
-    clientName: "Mr. R. K. Jain & Family",
+    quote: "Jain Signature Studio LLP transformed our residence with millimeter precision. Their dedication to material perfection, Italian marble detailing, and seamless turnkey execution made the journey completely stress-free.",
+    clientName: "Mr.Omesh Chaudhary & family",
     role: "Villa Homeowner",
     location: "Raj Nagar Extension, Ghaziabad",
     projectType: "Full Villa Interior Handover",
@@ -649,7 +649,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "1",
-    quote: "Jain Signature transformed our Ghaziabad duplex into an architectural masterpiece. Their dedication to material perfection and millimeter precision made the entire process effortless and truly enjoyable.",
+    quote: "Jain Signature Studio LLP transformed our Ghaziabad duplex into an architectural masterpiece. Their dedication to material perfection and millimeter precision made the entire process effortless and truly enjoyable.",
     clientName: "Vikramaditya & Ananya Sharma",
     role: "Villa Owner",
     location: "Raj Nagar Extension, Ghaziabad",
@@ -665,7 +665,7 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "3",
-    quote: "For our commercial space in GNB Mall, Jain Signature created an environment that communicates prestige and calm. The craftsmanship and bespoke joinery are world-class.",
+    quote: "For our commercial space in GNB Mall, Jain Signature Studio LLP created an environment that communicates prestige and calm. The craftsmanship and bespoke joinery are world-class.",
     clientName: "Siddharth Verma",
     role: "Business Owner",
     location: "GNB Mall, Raj Nagar Extn",
@@ -680,7 +680,7 @@ export const ARTICLES_DATA: Article[] = [
     category: "INTERIOR DESIGN",
     date: "September 14, 2026",
     readTime: "5 min read",
-    author: "Jain Signature Editorial",
+    author: "Jain Signature Studio LLP Editorial",
     image: "/projects/dining-room-mirror-wall.jpg",
     excerpt: "Exploring the fundamental rules of spatial proportions, natural light, and authentic materials that ensure a home remains elegant for decades.",
     content: [
@@ -709,7 +709,7 @@ export const ARTICLES_DATA: Article[] = [
     category: "DESIGN TRENDS",
     date: "August 10, 2026",
     readTime: "4 min read",
-    author: "Jain Signature Studio",
+    author: "Jain Signature Studio LLP",
     image: "/projects/grand-foyer-backlit-mirror.jpg",
     excerpt: "True luxury is quiet. Discover how generous whitespace, concealed storage, and restrained geometry elevate high-end living spaces.",
     content: [

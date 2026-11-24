@@ -59,7 +59,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-6 left-6 text-white flex items-center space-x-2">
                 <DynamicIcon name={service.iconName} className="w-5 h-5 text-[#1468a2]" />
-                <span className="text-sm font-medium tracking-wide">Jain Signature Expertise</span>
+                <span className="text-sm font-medium tracking-wide">Jain Signature Studio LLP Expertise</span>
               </div>
             </div>
           )}

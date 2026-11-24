@@ -4,10 +4,10 @@ import { BRAND_INFO } from '../data/studioData';
 
 interface FooterProps {
   setActivePage: (page: string) => void;
-  onOpenInquiry: () => void;
+  onOpenInquiry?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) => {
+export const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
   const handleNav = (page: string) => {
     setActivePage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) 
             <div>
               <img
                 src={BRAND_INFO.logoUrl}
-                alt="Jain Signature Studio Logo"
+                alt="Jain Signature Studio LLP Logo"
                 className="h-12 w-auto object-contain brightness-200"
               />
             </div>
@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) 
               "Creating spaces with character, craftsmanship and timeless elegance. We craft bespoke residential and commercial environments that endure beyond trends."
             </p>
             <button
-              onClick={onOpenInquiry}
+              onClick={() => handleNav('contact')}
               className="inline-flex items-center space-x-2 px-6 py-3.5 rounded-full bg-[#1468a2] text-white text-xs font-bold uppercase tracking-wider hover:bg-white hover:text-[#181818] transition-colors shadow-md"
             >
               <span>Start Your Project</span>
@@ -179,7 +179,7 @@ export const Footer: React.FC<FooterProps> = ({ setActivePage, onOpenInquiry }) 
 
         {/* Bottom copyright line */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/70 font-normal gap-4">
-          <p>© 2026 Jain Signature Studio. All Rights Reserved.</p>
+          <p>© 2026 Jain Signature Studio LLP. All Rights Reserved.</p>
           <div className="flex items-center space-x-6">
             <button onClick={() => handleNav('contact')} className="hover:text-[#1468a2] transition-colors">
               Privacy Policy

@@ -19,7 +19,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
     phone: '',
     city: 'Mumbai',
     projectType: preselectedService || 'Full Home Interiors',
-    budget: '₹50 Lakhs – ₹1 Crore',
+    budget: '₹25 Lakhs – ₹35 Lakhs',
     message: ''
   });
 
@@ -34,7 +34,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent(
-      `Hello Jain Signature Studio,\n\nI would like to start a project.\nName: ${formData.name}\nCity: ${formData.city}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nPhone: ${formData.phone}`
+      `Hello Jain Signature Studio LLP,\n\nI would like to start a project.\nName: ${formData.name}\nCity: ${formData.city}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nPhone: ${formData.phone}`
     );
     window.open(`https://wa.me/${BRAND_INFO.whatsapp}?text=${text}`, '_blank');
   };
@@ -187,10 +187,15 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl bg-white border border-[#E2DACD] text-[#181818] text-sm focus:outline-none focus:border-[#1468a2]"
                   >
-                    <option value="₹25 Lakhs – ₹50 Lakhs">₹25 Lakhs – ₹50 Lakhs</option>
-                    <option value="₹50 Lakhs – ₹1 Crore">₹50 Lakhs – ₹1 Crore</option>
-                    <option value="₹1 Crore – ₹3 Crores">₹1 Crore – ₹3 Crores</option>
-                    <option value="₹3 Crores+">₹3 Crores+ (Ultra Luxury / Estate)</option>
+                    <option value="₹25 Lakhs – ₹35 Lakhs">₹25 Lakhs – ₹35 Lakhs</option>
+                    <option value="₹35 Lakhs – ₹45 Lakhs">₹35 Lakhs – ₹45 Lakhs</option>
+                    <option value="₹45 Lakhs – ₹55 Lakhs">₹45 Lakhs – ₹55 Lakhs</option>
+                    <option value="₹55 Lakhs – ₹65 Lakhs">₹55 Lakhs – ₹65 Lakhs</option>
+                    <option value="₹65 Lakhs – ₹75 Lakhs">₹65 Lakhs – ₹75 Lakhs</option>
+                    <option value="₹75 Lakhs – ₹85 Lakhs">₹75 Lakhs – ₹85 Lakhs</option>
+                    <option value="₹85 Lakhs – ₹95 Lakhs">₹85 Lakhs – ₹95 Lakhs</option>
+                    <option value="₹95 Lakhs – ₹1 Crore">₹95 Lakhs – ₹1 Crore</option>
+                    <option value="₹1 Crore+">₹1 Crore+ (Ultra Luxury / Estate)</option>
                   </select>
                 </div>
               </div>
